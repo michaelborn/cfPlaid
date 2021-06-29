@@ -30,4 +30,48 @@ component extends="BaseRequest"{
             )
         );
     }
+
+
+    /**
+     * Exchange a public_token for an access_token
+     * 
+     * See Plaid API docs
+     * https://plaid.com/docs/api/tokens/#itempublic_tokenexchange
+     */
+    public struct function exchangeToken(
+        required string public_token
+    ){
+        return handleResponse(
+            hyper.post(
+                url = settings.api_uri & "/item/public_token/exchange",
+                body = {
+                    "client_id"   : settings.api_client_id,
+                    "secret"      : settings.api_client_secret,
+                    "public_token": arguments.public_token
+                }
+            )
+        );
+    }
+
+
+    /**
+     * Rotate an access_token for security reasons.
+     * 
+     * See Plaid API docs
+     * https://plaid.com/docs/api/tokens/#itemaccess_tokeninvalidate
+     */
+    public struct function invalidateToken(
+        required string access_token
+    ){
+        return handleResponse(
+            hyper.post(
+                url = settings.api_uri & "/item/access_token/invalidate",
+                body = {
+                    "client_id"   : settings.api_client_id,
+                    "secret"      : settings.api_client_secret,
+                    "access_token": arguments.access_token
+                }
+            )
+        );
+    }
 }
