@@ -1,0 +1,19 @@
+{
+    "name":"@MODULE_NAME@-lucee@5",
+    "app":{
+        "serverHomeDirectory":".engine/lucee5",
+        "cfengine":"lucee@5"
+    },
+    "web":{
+        "http":{
+            "port":"60299"
+        },
+        "rewrites":{
+            "enable":"true"
+        },
+		"aliases":{
+            "/moduleroot/@MODULE_NAME@":"../"
+        }
+    },
+    "openBrowser":"false"
+}
