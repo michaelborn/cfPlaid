@@ -7,7 +7,7 @@ component {
 
 	// Module Properties
 	this.title 				= "cfPlaid";
-	this.author 			= "Ortus Solutions";
+	this.author 			= "Michael Born <michael@ortussolutions.com>";
 	this.webURL 			= "https://www.ortussolutions.com";
 	this.description 		= "Handle Plaid API connections";
 

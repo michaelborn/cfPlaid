@@ -31,7 +31,6 @@ component extends="BaseRequest"{
         );
     }
 
-
     /**
      * Exchange a public_token for an access_token
      * 
@@ -53,7 +52,6 @@ component extends="BaseRequest"{
         );
     }
 
-
     /**
      * Rotate an access_token for security reasons.
      * 
@@ -74,4 +72,27 @@ component extends="BaseRequest"{
             )
         );
     }
+
+    /**
+     * Retreive Plaid token metadata
+     * 
+     * See Plaid API docs
+     * https://plaid.com/docs/api/tokens/#linktokenget
+     */
+    public struct function getLinkToken(
+        required string access_token
+    ){
+        return handleResponse(
+            hyper.post(
+                url = settings.api_uri & "/link/token/get",
+                body = {
+                    "client_id"   : settings.api_client_id,
+                    "secret"      : settings.api_client_secret,
+                    "access_token": arguments.access_token
+                }
+            )
+        );
+    }
+
+    
 }
