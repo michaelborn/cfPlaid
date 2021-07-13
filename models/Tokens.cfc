@@ -14,7 +14,7 @@ component extends="BaseRequest"{
     ){
         return handleResponse(
             hyper.post(
-                url = settings.api_uri & "/link/token/create",
+                url = settings.api_url & "/link/token/create",
                 body = {
                     "client_id"    : settings.api_client_id,
                     "secret"       : settings.api_client_secret,
@@ -42,7 +42,7 @@ component extends="BaseRequest"{
     ){
         return handleResponse(
             hyper.post(
-                url = settings.api_uri & "/item/public_token/exchange",
+                url = settings.api_url & "/item/public_token/exchange",
                 body = {
                     "client_id"   : settings.api_client_id,
                     "secret"      : settings.api_client_secret,
@@ -63,7 +63,7 @@ component extends="BaseRequest"{
     ){
         return handleResponse(
             hyper.post(
-                url = settings.api_uri & "/item/access_token/invalidate",
+                url = settings.api_url & "/item/access_token/invalidate",
                 body = {
                     "client_id"   : settings.api_client_id,
                     "secret"      : settings.api_client_secret,
@@ -84,7 +84,7 @@ component extends="BaseRequest"{
     ){
         return handleResponse(
             hyper.post(
-                url = settings.api_uri & "/link/token/get",
+                url = settings.api_url & "/link/token/get",
                 body = {
                     "client_id"   : settings.api_client_id,
                     "secret"      : settings.api_client_secret,

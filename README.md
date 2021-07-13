@@ -7,19 +7,20 @@ Integrate with the [Plaid API](https://plaid.com/docs/api/) from CFML.
 ## Setup
 
 1. Install this module in your app - `box install cfPlaid`
-2. Add the required configuration either via environment variables or module settings
+2. Add the required configuration either via environment variables OR module settings
 
 ## Configuration
+
+There are two ways to configure API credentials for cfPlaid:
+
+1. Using a [`.env` file](#env-file-and-commandbox-dotenv)
+2. Using [Module Settings](#module-settings)
 
 ### Env File and `commandbox-dotenv`
 
 ```bash
 # Plaid API creds
 PLAID_URL=https://sandbox.plaid.com
-
-# Uh... this might be fake.
-PLAID_USERNAME=fakey_fakey
-PLAID_PASSWORD=you_cannot_pass
 
 # Plaid keys
 PLAID_CLIENT_ID=123_FIXME
@@ -33,9 +34,7 @@ Add the following to `config/ColdBox.cfc` and update as necessary:
 ```js
 moduleSettings = {
     cfPlaid = {
-        api_uri          : "https://sandbox.plaid.com",
-        api_user         : "user-FIXME",
-        api_pass         : "pass-FIXME",
+        api_url          : "https://sandbox.plaid.com",
         api_client_id    : "123_FIXME",
         api_client_secret: "456_FIXME"
     }

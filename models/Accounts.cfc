@@ -20,7 +20,7 @@ component extends="BaseRequest"{
     ){
         return handleResponse(
             hyper.post(
-                url = settings.api_uri & "/accounts/balance/get",
+                url = settings.api_url & "/accounts/balance/get",
                 body = {
                     "client_id"   : settings.api_client_id,
                     "secret"      : settings.api_client_secret,
