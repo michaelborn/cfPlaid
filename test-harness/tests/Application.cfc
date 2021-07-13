@@ -4,29 +4,37 @@ Copyright 2005-2007 ColdBox Framework by Luis Majano and Ortus Solutions, Corp
 www.ortussolutions.com
 ********************************************************************************
 */
-component{
+component {
 
 	// UPDATE THE NAME OF THE MODULE IN TESTING BELOW
 	request.MODULE_NAME = "@MODULE_NAME@";
 
 	// APPLICATION CFC PROPERTIES
-	this.name 				= "#request.MODULE_NAME# Testing Suite";
-	this.sessionManagement 	= true;
-	this.sessionTimeout 	= createTimeSpan( 0, 0, 15, 0 );
-	this.applicationTimeout = createTimeSpan( 0, 0, 15, 0 );
-	this.setClientCookies 	= true;
+	this.name               = "#request.MODULE_NAME# Testing Suite";
+	this.sessionManagement  = true;
+	this.sessionTimeout     = createTimespan( 0, 0, 15, 0 );
+	this.applicationTimeout = createTimespan( 0, 0, 15, 0 );
+	this.setClientCookies   = true;
 
 	// Create testing mapping
 	this.mappings[ "/tests" ] = getDirectoryFromPath( getCurrentTemplatePath() );
 
 	// The application root
-	rootPath = REReplaceNoCase( this.mappings[ "/tests" ], "tests(\\|/)", "" );
-	this.mappings[ "/root" ]   			= rootPath;
+	rootPath = reReplaceNoCase(
+		this.mappings[ "/tests" ],
+		"tests(\\|/)",
+		""
+	);
+	this.mappings[ "/root" ] = rootPath;
 
 	// The module root path
-	moduleRootPath = REReplaceNoCase( rootPath, "#request.MODULE_PATH#(\\|/)test-harness(\\|/)", "" );
-	this.mappings[ "/moduleroot" ] 				= moduleRootPath;
-	this.mappings[ "/#request.MODULE_NAME#" ] 	= moduleRootPath & "#request.MODULE_PATH#";
+	moduleRootPath = reReplaceNoCase(
+		rootPath,
+		"#request.MODULE_PATH#(\\|/)test-harness(\\|/)",
+		""
+	);
+	this.mappings[ "/moduleroot" ]            = moduleRootPath;
+	this.mappings[ "/#request.MODULE_NAME#" ] = moduleRootPath & "#request.MODULE_PATH#";
 
 	// ORM Definitions
 	/**
@@ -46,16 +54,15 @@ component{
 	**/
 
 	function onRequestStart( required targetPage ){
-
-		if( url.keyExists( "fwreinit" ) ){
-			ormreload();
-			if( StructKeyExists( server, "lucee" ) ){
+		if ( url.keyExists( "fwreinit" ) ) {
+			ormReload();
+			if ( structKeyExists( server, "lucee" ) ) {
 				pagePoolClear();
 			}
 		}
 
 		// Cleanup
-		if( !isNull( application.cbController ) ){
+		if ( !isNull( application.cbController ) ) {
 			application.cbController.getLoaderService().processShutdown();
 		}
 		structDelete( application, "cbController" );
@@ -68,4 +75,5 @@ component{
 		structDelete( application, "cbController" );
 		structDelete( application, "wirebox" );
 	}
+
 }
