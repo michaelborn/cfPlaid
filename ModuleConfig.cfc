@@ -19,7 +19,7 @@ component {
 	 * Configure Module
 	 */
 	function configure(){
-		settings = {
+		variables.settings = {
 			api_url : getSystemSetting(
 				"PLAID_URL",
 				"https://sandbox.plaid.com"
@@ -29,6 +29,18 @@ component {
 			// You can retrieve this from https://dashboard.plaid.com/team/keys
 			api_client_secret : getSystemSetting( "PLAID_CLIENT_SECRET" )
 		};
+
+        // binder.map( "PlaidClient" )
+        //     .to( "hyper.models.HyperBuilder" )
+        //     .asSingleton()
+        //     .initWith(
+        //         baseUrl = settings.api_url,
+        //         body = {
+		// 			"client_id"    : settings.api_client_id,
+		// 			"secret"       : settings.api_client_secret
+		//			"access_token" : arguments.access_token
+        //         }
+        //     );
 	}
 
 }

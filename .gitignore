@@ -1,14 +1,14 @@
 .vscode
+.env
 
 .artifacts/**
 .tmp/**
 
-test-harness/.engine/**
-test-harness/coldbox/**
-test-harness/docbox/**
-test-harness/testbox/**
-test-harness/logs/**
-test-harness/modules/**
+tests/resources/app/coldbox
+testbox
+tests/logs/**
+modules
+tests/.env
 
 # modules
 modules/**

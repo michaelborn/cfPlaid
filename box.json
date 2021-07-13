@@ -22,7 +22,8 @@
     ],
     "contributors":[],
     "dependencies":{
-        "hyper":"^3.0.0"
+        "hyper":"^3.0.0",
+        "coldbox":"^6.5.1+33"
     },
     "ignore":[
         "**/.*",
@@ -35,6 +36,18 @@
         "format:check":"cfformat check models,test-harness/tests/,ModuleConfig.cfc"
     },
     "installPaths":{
-        "hyper":"modules/hyper/"
+        "hyper":"modules/hyper/",
+        "testbox":"testbox/",
+        "coldbox":"tests/resources/app/coldbox/"
+    },
+    "devDependencies":{
+        "testbox":"^4.4.0-snapshot"
+    },
+    "testbox":{
+        "runner":[
+            {
+                "default":"http://localhost:60299/tests/runner.cfm"
+            }
+        ]
     }
 }

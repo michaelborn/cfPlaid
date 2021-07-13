@@ -1,8 +1,8 @@
 {
-    "name":"@MODULE_NAME@-lucee@5",
+    "name":"cfplaid-adobe@2018",
     "app":{
-        "serverHomeDirectory":".engine/lucee5",
-        "cfengine":"lucee@5"
+        "serverHomeDirectory":".engine/adobe2018",
+        "cfengine":"adobe@2018"
     },
     "web":{
         "http":{
@@ -12,7 +12,7 @@
             "enable":"true"
         },
 		"aliases":{
-            "/moduleroot/@MODULE_NAME@":"../"
+            "/moduleroot/cfplaid":"../"
         }
     },
     "openBrowser":"false"
