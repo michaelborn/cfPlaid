@@ -1,6 +1,6 @@
 {
     "name":"cfPlaid",
-    "version":"1.0.0",
+    "version":"1.0.1",
     "author":"Michael Born",
     "homepage":"https://github.com/michaelborn/cfPlaid",
     "documentation":"https://github.com/michaelborn/cfPlaid",
@@ -47,5 +47,6 @@
                 "default":"http://localhost:60299/tests/runner.cfm"
             }
         ]
-    }
+    },
+    "location":"michaelborn/cbFlannel#v1.0.1"
 }
