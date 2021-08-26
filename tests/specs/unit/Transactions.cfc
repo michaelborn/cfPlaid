@@ -27,10 +27,9 @@ component extends="coldbox.system.testing.BaseModelTest" model="cfplaid.models.T
 
 		describe( "cfplaid.models.Transactions Suite", function(){
 
-			it( "should getBalances", function(){
+			xit( "should getBalances", function(){
 				expect( false ).toBeTrue();
 			});
-
 
 		});
 

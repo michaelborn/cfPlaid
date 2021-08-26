@@ -25,7 +25,7 @@ component extends="coldbox.system.testing.BaseModelTest" model="cfplaid.models.T
 
 	function run(){
 
-		describe( "models.Tokens Suite", function(){
+		xdescribe( "models.Tokens Suite", function(){
 
 			it( "should createLink", function(){
 				expect( false ).toBeTrue();
