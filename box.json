@@ -1,19 +1,17 @@
 {
     "name":"cfPlaid",
     "version":"1.0.0",
-    "location":"http://downloads.ortussolutions.com/ortussolutions/coldbox-modules/@MODULE_SLUG@/@build.version@/@MODULE_SLUG@-@build.version@.zip",
-    "author":"Ortus Solutions <info@ortussolutions.com",
-    "homepage":"https://github.com/coldbox-modules/@MODULE_SLUG@",
-    "documentation":"https://github.com/coldbox-modules/@MODULE_SLUG@",
+    "author":"Michael Born",
+    "homepage":"https://github.com/michaelborn/cfPlaid",
+    "documentation":"https://github.com/michaelborn/cfPlaid",
     "repository":{
         "type":"git",
-        "url":"https://github.com/coldbox-modules/@MODULE_SLUG@"
+        "url":"https://github.com/michaelborn/cfPlaid/"
     },
-    "bugs":"https://github.com/coldbox-modules/@MODULE_SLUG@",
-    "shortDescription":"Description goes here",
-    "slug":"@MODULE_SLUG@",
+    "bugs":"https://github.com/michaelborn/cfPlaid/issues",
+    "shortDescription":"Plaid API wrapper for CFML",
+    "slug":"cfPlaid",
     "type":"modules",
-    "keywords":"",
     "license":[
         {
             "type":"Apache2",
@@ -27,10 +25,10 @@
     },
     "ignore":[
         "**/.*",
-        "test-harness"
+        "tests"
     ],
     "scripts":{
-        "release":"recipe build/release.boxr",
+        "postVersion":"package set location='michaelborn/cbFlannel#v`package version`'",
         "format":"cfformat run models,test-harness/tests/,ModuleConfig.cfc --overwrite",
         "format:watch":"cfformat watch models,test-harness/tests/,ModuleConfig.cfc ./.cfformat.json",
         "format:check":"cfformat check models,test-harness/tests/,ModuleConfig.cfc"
