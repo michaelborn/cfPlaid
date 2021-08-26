@@ -46,6 +46,5 @@
                 "default":"http://localhost:60299/tests/runner.cfm"
             }
         ]
-    },
-    "location":"michaelborn/cbFlannel#v1.0.1"
+    }
 }
