@@ -38,7 +38,7 @@ component {
 				message    = message,
 				type       = type,
 				detail     = detail,
-				resultinfo = result
+				extendedinfo = result
 			);
 		}
 	}
