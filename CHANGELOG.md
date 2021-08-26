@@ -1,3 +1,17 @@
+# v1.0.2
+## 26 Aug 2021 — 17:32:04 UTC
+
+### 🐛 FIX
+
++ __\*:__ Correct bad/invalid `location` in box.json
+ ([0c36d96](https://github.com/michaelborn/cfPlaid//commit/0c36d9685463ab6d228ca8cb39a7bca28a5a685c))
+
+### 📝 OTHER
+
++ __\*:__ Merge branch 'main' of github.com:michaelborn/cfPlaid into main
+ ([6dcdbbf](https://github.com/michaelborn/cfPlaid//commit/6dcdbbfc0126f377eecf1ea0feebf1a8b886ebbd))
+
+
 # v1.0.1
 ## 26 Aug 2021 — 17:18:35 UTC
 
