@@ -34,13 +34,13 @@ jobs:
         working-directory: ./tests
         run: |
           box set cfconfig_robustExceptionEnabled=true
-          box server start cfengine=${{ matrix.cfengine }} --noSaveSettings
+          box server start cfengine=${{ matrix.cfengine }} port=60299 --noSaveSettings
         env:
           PLAID_URL: https://sandbox.plaid.com
           PLAID_CLIENT_ID: ${{ secrets.PLAID_CLIENT_ID }}
           PLAID_CLIENT_SECRET: ${{ secrets.PLAID_CLIENT_SECRET }}
 
-      - run: box testbox run
+      - run: box testbox run runner="http://localhost:60299/tests/runner.cfm"
 
   release:
     name: Semantic Release
