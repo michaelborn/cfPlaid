@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - master
 
 jobs:
   tests:
@@ -55,6 +54,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GA_COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+      MAIN_BRANCH: "main"
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
@@ -74,7 +74,7 @@ jobs:
           box install commandbox-semantic-release
           box config set verboseErrors=true
           box config set endpoints.forgebox.APIToken=${{ secrets.FORGEBOX_TOKEN }}
-          box config set modules.commandbox-semantic-release.targetBranch=master
+          box config set modules.commandbox-semantic-release.targetBranch=${{ env.MAIN_BRANCH }}
           box config set modules.commandbox-semantic-release.plugins='{ "VerifyConditions": "GitHubActionsConditionsVerifier@commandbox-semantic-release", "FetchLastRelease": "ForgeBoxReleaseFetcher@commandbox-semantic-release", "RetrieveCommits": "JGitCommitsRetriever@commandbox-semantic-release", "ParseCommit": "EmojiLogCommitParser@commandbox-semantic-release", "FilterCommits": "DefaultCommitFilterer@commandbox-semantic-release", "AnalyzeCommits": "DefaultCommitAnalyzer@commandbox-semantic-release", "VerifyRelease": "NullReleaseVerifier@commandbox-semantic-release", "GenerateNotes": "GitHubMarkdownNotesGenerator@commandbox-semantic-release", "UpdateChangelog": "FileAppendChangelogUpdater@commandbox-semantic-release", "CommitArtifacts": "GitHubArtifactsCommitter@commandbox-semantic-release", "PublishRelease": "ForgeBoxReleasePublisher@commandbox-semantic-release", "PublicizeRelease": "GitHubReleasePublicizer@commandbox-semantic-release" }'
       
       - name: Run Semantic Release

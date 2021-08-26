@@ -2,6 +2,8 @@
 
 Integrate with the [Plaid API](https://plaid.com/docs/api/) from CFML.
 
+[![Release](https://github.com/michaelborn/cfPlaid/actions/workflows/release.yml/badge.svg)](https://github.com/michaelborn/cfPlaid/actions/workflows/release.yml)
+
 ## Features
 
 ## Setup
