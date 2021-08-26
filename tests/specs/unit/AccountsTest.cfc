@@ -43,7 +43,8 @@ component extends="coldbox.system.testing.BaseModelTest" model="cfplaid.models.A
 			describe( "getBalances", function(){
 				it( "should hit the account balances endpoint", function() {
 
-					variables.hyperResponseMock.$property( propertyName="data", mock="{ balances: [] }" )
+					var mockResponseData = serializeJSON( { balances: [] } );
+					variables.hyperResponseMock.$property( propertyName="data", mock=mockResponseData );
 					var result = variables.model.getBalances(
 						access_token = "token-blabla"
 					);
