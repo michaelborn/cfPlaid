@@ -53,7 +53,8 @@ component extends="coldbox.system.testing.BaseModelTest" model="cfplaid.models.A
 									.toHaveKey( "balances" );
 					// debug( hyperMock.$callLog() );
 
-					var balanceCall = arrayLast( hyperMock.$callLog()["post"] );
+					var callLog = hyperMock.$callLog()["post"];
+					var balanceCall = callLog[ arrayLen( callLog ) ];
 					expect( balanceCall.url ).toBe( "#variables.plaidAPISettings.api_url#/accounts/balance/get", "should hit the right API url" );
 					expect( balanceCall.body.client_id ).toBe( variables.plaidAPISettings.api_client_id );
 					expect( balanceCall.body.secret ).toBe( variables.plaidAPISettings.api_client_secret );
