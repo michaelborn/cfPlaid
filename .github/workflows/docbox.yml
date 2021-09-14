@@ -1,0 +1,22 @@
+name: DocBox
+on:
+  push:
+    branches-ignore: # TODO: Change to 'branches' so it only generates docs on push to main branches
+      - master
+      - main
+    # Only run if *.cfc files are modified
+    # paths:
+      # - '**.cfc'
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./.github/actions/generic/
+        with:
+          cmd: docbox generate mapping=cfPlaid excludes=test|ModuleConfig strategy-outputDir=docs/apidocs strategy-projectTitle=cfPlaid
+      - name: Commit Docs Pages
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "📖 DOC: Auto-generate DocBox API docs"
