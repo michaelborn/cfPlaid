@@ -1,12 +1,12 @@
 name: DocBox
 on:
   push:
-    branches-ignore: # TODO: Change to 'branches' so it only generates docs on push to main branches
+    branches:
       - master
       - main
     # Only run if *.cfc files are modified
-    # paths:
-      # - '**.cfc'
+    paths:
+      - '**.cfc'
 
 jobs:
   docs:
