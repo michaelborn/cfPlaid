@@ -1,3 +1,48 @@
+# v1.0.5
+## 14 Sep 2021 — 10:18:40 UTC
+
+### 🐛 FIX
+
++ __\*:__ Correct docbox output dir for github pages
+ ([46ebd76](https://github.com/michaelborn/cfPlaid//commit/46ebd76dc4161d0830354e26b9b2b8ad18fe03f4))
++ __\*:__ Checkout repo before running local docbox action
+ ([cd79b61](https://github.com/michaelborn/cfPlaid//commit/cd79b61e2f410ef93bd5333c07f214d0992c1444))
+
+### 📖 DOC
+
++ __\*:__ Auto-generate DocBox API docs
+ ([d3b7ff6](https://github.com/michaelborn/cfPlaid//commit/d3b7ff68b6a8a09e41f6e1fd80b6b470a34c0439))
++ __\*:__ Final lockdown of docbox generation ([8344451](https://github.com/michaelborn/cfPlaid//commit/83444518ce77da55d16f1654429b1d7b1e22c4e4))
++ __\*:__ Auto-generate DocBox API docs
+ ([dc6e853](https://github.com/michaelborn/cfPlaid//commit/dc6e853ff2143608854b4186a6d22062966cf1dd))
++ __\*:__ Auto-generate DocBox API docs
+ ([b0fc15f](https://github.com/michaelborn/cfPlaid//commit/b0fc15f80fccb3b01f2d74f4a4caa2441b48c91a))
++ __\*:__ Add docbox workflow for auto-generating github pages docs
+ ([ce77cd2](https://github.com/michaelborn/cfPlaid//commit/ce77cd2c1acdd2494b27d03bcba1bb8e414ab307))
+
+### 📝 OTHER
+
++ __\*:__ Merge branch 'main' of github.com:michaelborn/cfPlaid into main
+ ([0b3792d](https://github.com/michaelborn/cfPlaid//commit/0b3792d0cd261b354b728e8c74453dbb486740a9))
++ __\*:__ Merge pull request #1 from michaelborn/feat/docbox ([3bb91f6](https://github.com/michaelborn/cfPlaid//commit/3bb91f6f464726549ef42f7564b3dd144359c2e7))
++ __\*:__ Merge branch 'feat/docbox' of github.com:michaelborn/cfPlaid into feat/docbox
+ ([6f06a72](https://github.com/michaelborn/cfPlaid//commit/6f06a7231d995fe9d6fce9235a4f04d9f111c772))
++ __\*:__ Merge branch 'main' of github.com:michaelborn/cfPlaid into feat/docbox
+ ([3407d72](https://github.com/michaelborn/cfPlaid//commit/3407d726f3613982bf6f029cc8fa30a9e544c152))
+
+### 📦 NEW
+
++ __\*:__ Add "Assets.createReport()" API wrapper
+ ([8ec3f95](https://github.com/michaelborn/cfPlaid//commit/8ec3f9561e56b4a0cb5e2cdcd53c245c9220eaec))
+
+### 🤖 TEST
+
++ __\*:__ Add models/ mapping for simpler testbox specs
+ ([6b5ccac](https://github.com/michaelborn/cfPlaid//commit/6b5ccacb350381a10b370851d1e7c43c767052c5))
++ __\*:__ Improve Accounts test spec
+ ([09ca42f](https://github.com/michaelborn/cfPlaid//commit/09ca42fd49363fdcd0676c583e91daf1b104147b))
+
+
 # v1.0.4
 ## 14 Sep 2021 — 09:47:45 UTC
 
