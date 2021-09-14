@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>BaseRequest</title>
+	<title>Assets</title>
 	<meta name="keywords" content="cfPlaid.models.concurrent.Callable interface">
 	<!-- common assets -->
 	
@@ -96,7 +96,7 @@ $(document).ready(function() {
 	      	</ul>
 
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="../../index.html?cfPlaid/models/BaseRequest.html" target="_top">
+				<li><a href="../../index.html?cfPlaid/models/Assets.html" target="_top">
 					<i class="glyphicon glyphicon-fullscreen"></i> Frames
 					</a>
 				</li>
@@ -122,7 +122,7 @@ $(document).ready(function() {
 
 Class
 
- BaseRequest</h2>
+ Assets</h2>
 
 
 
@@ -144,10 +144,19 @@ Class
 	
 	
 
+	
+		
+		
+			
+		
+	
+	
+
 
 <!-- Inheritance Tree-->
 <pre style="background:white">lucee.Component
-    <img src="../../resources/inherit.gif" alt="extended by ">cfPlaid.models.BaseRequest
+    <img src="../../resources/inherit.gif" alt="extended by "><a href="../../cfPlaid/models/BaseRequest.html" title="class in cfPlaid.models">cfPlaid.models.BaseRequest</a>
+      <img src="../../resources/inherit.gif" alt="extended by ">cfPlaid.models.Assets
 </pre>
 
 
@@ -157,28 +166,13 @@ Class
 
 
 
-<div class="panel panel-default">
-	<div class="panel-heading"><strong>Direct Known Subclasses:</strong></div>
-  	<div class="panel-body">
-	
-		
-		<a href="../../cfPlaid/models/Accounts.html" title="class in cfPlaid.models">Accounts</a>
-	
-		,
-		<a href="../../cfPlaid/models/Assets.html" title="class in cfPlaid.models">Assets</a>
-	
-		,
-		<a href="../../cfPlaid/models/Tokens.html" title="class in cfPlaid.models">Tokens</a>
-	
-		,
-		<a href="../../cfPlaid/models/Transactions.html" title="class in cfPlaid.models">Transactions</a>
-	
-	</div>
+
+
+
+
+<div id="class-hint">
+	<p>Handle Plaid API Asset requests</p>
 </div>
-
-
-
-
 
 
 <!-- Clas Attributes -->
@@ -186,6 +180,8 @@ Class
 	<div class="panel-heading"><strong>Class Attributes:</strong></div>
 		<div class="panel-body">
 		
+		
+			
 		
 			
 		
@@ -202,6 +198,17 @@ Class
 			&nbsp;
 			
 		
+			
+		
+			
+			
+			<li class="label label-danger label-annotations">
+				see
+				
+				: https://plaid.com/docs/api/products/#assets
+				
+			</li>
+			&nbsp;
 			
 		
 			
@@ -245,169 +252,7 @@ Class
 
 
 
-<!-- ========== METHOD SUMMARY =========== -->
 
-<a name="property_summary"><!-- --></a>
-<table class="table table-bordered table-hover">
-	<tr class="info">
-		<th align="left" colspan="5">
-			<strong>Property Summary</strong>
-		</th>
-	</tr>
-	<tr class="info">
-		<th align="left">
-			<strong>type</strong>
-		</th>
-		<th align="left">
-			<strong>property</strong>
-		</th>
-		<th align="left">
-			<strong>default</strong>
-		</th>
-		<th align="left">
-			<strong>serializable</strong>
-		</th>
-		<th align="left">
-			<strong>required</strong>
-		</th>
-	</tr>
-
-	
-	
-	
-	<tr>
-		<td align="right" valign="top" width="1%">
-			<code>any</code>
-		</td>
-		<td>
-			<strong><a href="BaseRequest.html#hyper()">hyper</A></strong>
-			<br>
-			
-			<br><br>
-			<ul>
-			
-				
-			
-				
-				<li class="label label-default label-annotations">access = public</li>
-				
-			
-				
-			
-				
-			
-				
-				<li class="label label-default label-annotations">returntype = any</li>
-				
-			
-				
-				<li class="label label-default label-annotations">inject = HyperBuilder@hyper</li>
-				
-			
-				
-			
-				
-			
-				
-			
-			</ul>
-
-		</td>
-		<td align="right" valign="top" width="1%">
-			
-		</td>
-		<td align="right" valign="top" width="1%">
-			<code>
-				true
-			</code>
-		</td>
-		<td align="right" valign="top" width="1%">
-			<code>
-				false
-			</code>
-		</td>
-	</tr>
-	
-	
-	
-	<tr>
-		<td align="right" valign="top" width="1%">
-			<code>any</code>
-		</td>
-		<td>
-			<strong><a href="BaseRequest.html#settings()">settings</A></strong>
-			<br>
-			
-			<br><br>
-			<ul>
-			
-				
-			
-				
-				<li class="label label-default label-annotations">access = public</li>
-				
-			
-				
-			
-				
-			
-				
-				<li class="label label-default label-annotations">returntype = any</li>
-				
-			
-				
-				<li class="label label-default label-annotations">inject = coldbox:modulesettings:cfPlaid</li>
-				
-			
-				
-			
-				
-			
-				
-			
-			</ul>
-
-		</td>
-		<td align="right" valign="top" width="1%">
-			
-		</td>
-		<td align="right" valign="top" width="1%">
-			<code>
-				true
-			</code>
-		</td>
-		<td align="right" valign="top" width="1%">
-			<code>
-				false
-			</code>
-		</td>
-	</tr>
-	
-	</tr>
-</table>
-
-
-
-	
-	
-	<!-- ======== CONSTRUCTOR SUMMARY ======== -->
-
-	<a name="constructor_summary"><!-- --></a>
-	<table class="table table-bordered table-hover">
-		<tr class="info">
-			<th align="left" colspan="2">
-				<strong>Constructor Summary</strong>
-			</th>
-		</tr>
-		<tr>
-			
-			<td>
-				<strong><a href="BaseRequest.html#init()">init</A></strong>()
-				<br>
-				
-			</td>
-		</tr>
-	</table>
 
 
 
@@ -428,13 +273,13 @@ Class
 	
 	<tr>
 		<td align="right" valign="top" width="1%">
-			<code>private&nbsp;struct</code>
+			<code>struct</code>
 		</td>
 		<td>
-			<strong><a href="BaseRequest.html#handleResponse()">handleResponse</A></strong>(cfPlaid.models.HyperResponse response)
+			<strong><a href="Assets.html#createReport()">createReport</A></strong>(string access_token, numeric days_requested, [struct options='[runtime expression]'])
 			<br>
 			
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Handle Plaid API response errors.
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create an asset report.
 			
 		</td>
 	</tr>
@@ -445,6 +290,47 @@ Class
 
 <a name="inherited_methods"><!-- --></a>
 
+
+	
+
+	
+
+	&nbsp;
+	<a name="methods_inherited_from_class_cfPlaid.models.BaseRequest"><!-- --></a>
+	<table class="table table-hover table-bordered">
+		<tr class="info">
+			<th align="left">
+				<strong>Methods inherited from class <kbd><a href="../../cfPlaid/models/BaseRequest.html" title="class in cfPlaid.models">cfPlaid.models.BaseRequest</a></kbd></strong>
+			</th>
+		</tr>
+		<tr>
+			<td>
+				
+				
+				
+					
+					
+					
+					
+					
+					
+				
+					
+					
+					
+						
+					
+					
+					
+					
+				
+
+				
+					<a href="../../cfPlaid/models/BaseRequest.html#handleResponse()">handleResponse</a>, <a href="../../cfPlaid/models/BaseRequest.html#init()">init</a>
+				
+			</td>
+		</tr>
+	</table>
 
 	
 
@@ -476,137 +362,8 @@ Class
 
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 
-	<a name="constructor_detail"><!-- --></a>
-	<table class="table table-bordered">
-		<tr class="info">
-			<th colspan="1" align="left">
-				<strong>Constructor Detail</strong>
-			</th>
-		</tr>
-	</table>
-
-	<a name="init()"><!-- --></a><h3>
-	init</h3>
-	<kbd>public <strong>init</strong>()</kbd>
-
-	<br><br>
-
-	
-	<p></p>
-	
-
-	
-	<hr>
-
 
 <!-- ============ PROPERTY DETAIL ========== -->
-
-	<a name="property_detail"><!-- --></a>
-	<table class="table table-bordered">
-		<tr class="info">
-			<th colspan="1" align="left">
-				<strong>Property Detail</strong>
-			</th>
-		</tr>
-	</table>
-
-	
-		
-		<a name="hyper()"><!-- --></a>
-		<h3>hyper</h3>
-
-		<kbd>
-			property any
-			<strong>hyper</strong>
-			
-		</kbd>
-
-		<br><br>
-		
-
-		<dl>
-		<dt><strong>Attributes:</strong></dt>
-		
-			
-		
-			
-			<dd><code>access</code> - public</dd>
-			
-		
-			
-			<dd><code>required</code> - false</dd>
-			
-		
-			
-		
-			
-			<dd><code>returntype</code> - any</dd>
-			
-		
-			
-			<dd><code>inject</code> - HyperBuilder@hyper</dd>
-			
-		
-			
-		
-			
-		
-			
-			<dd><code>serializable</code> - true</dd>
-			
-		
-		</dl>
-
-		<hr>
-	
-		
-		<a name="settings()"><!-- --></a>
-		<h3>settings</h3>
-
-		<kbd>
-			property any
-			<strong>settings</strong>
-			
-		</kbd>
-
-		<br><br>
-		
-
-		<dl>
-		<dt><strong>Attributes:</strong></dt>
-		
-			
-		
-			
-			<dd><code>access</code> - public</dd>
-			
-		
-			
-			<dd><code>required</code> - false</dd>
-			
-		
-			
-		
-			
-			<dd><code>returntype</code> - any</dd>
-			
-		
-			
-			<dd><code>inject</code> - coldbox:modulesettings:cfPlaid</dd>
-			
-		
-			
-		
-			
-		
-			
-			<dd><code>serializable</code> - true</dd>
-			
-		
-		</dl>
-
-		<hr>
-	
 
 
 
@@ -629,18 +386,18 @@ Class
 
 
 	
-	<a name="handleResponse()"><!-- --></a>
+	<a name="createReport()"><!-- --></a>
 	<h3>
-		handleResponse
+		createReport
 		
 	</h3>
 
-	<kbd>private struct <strong>handleResponse</strong>(cfPlaid.models.HyperResponse response)</kbd>
+	<kbd>public struct <strong>createReport</strong>(string access_token, numeric days_requested, [struct options='[runtime expression]'])</kbd>
 
 	<br><br>
 
 	
-		<p>Handle Plaid API response errors</p>
+		<p>Create an asset report.</p>
 	
 
 	
@@ -657,7 +414,11 @@ Class
 		<dl>
 		<dt><strong>Parameters:</strong></dt>
 		
-		<dd><code>response</code> - a HyperResponse object for the request.</dd>
+		<dd><code>access_token</code> - true</dd>
+		
+		<dd><code>days_requested</code> - The maximum integer number of days of history to include in the Asset Report. If using Fannie Mae Day 1 Certainty, days_requested must be at least 61 for new originations or at least 31 for refinancings.</dd>
+		
+		<dd><code>options</code> - true</dd>
 		
 		</dl>
 	
