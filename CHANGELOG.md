@@ -1,3 +1,11 @@
+# v1.0.4
+## 14 Sep 2021 — 09:47:45 UTC
+
+### 📝 OTHER
+
++ __\*:__ Set theme jekyll-theme-leap-day ([46c0714](https://github.com/michaelborn/cfPlaid//commit/46c0714c8374647a946669f26e417bb26177ac63))
+
+
 # v1.0.3
 ## 26 Aug 2021 — 17:32:43 UTC
 
