@@ -5,13 +5,14 @@ on:
       - master
       - main
     # Only run if *.cfc files are modified
-    paths:
-      - '**.cfc'
+    # paths:
+      # - '**.cfc'
 
 jobs:
   docs:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - uses: ./.github/actions/generic/
         with:
           cmd: docbox generate mapping=cfPlaid excludes=test|ModuleConfig strategy-outputDir=docs/apidocs strategy-projectTitle=cfPlaid
