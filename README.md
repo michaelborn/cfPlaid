@@ -42,3 +42,7 @@ moduleSettings = {
     }
 }
 ```
+
+## API Docs
+
+The cfPlaid class documentation is auto-generated via [DocBox](https://docbox.ortusbooks.com/) and hosted on Github Pages at [michaelborn.github.io/cfPlaid/](https://michaelborn.github.io/cfPlaid/)

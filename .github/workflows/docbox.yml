@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: ./.github/actions/generic/
+      - uses: michaelborn/commandbox-action@v1
         with:
           cmd: docbox generate mapping=cfPlaid excludes=test|ModuleConfig strategy-outputDir=docs strategy-projectTitle=cfPlaid
       - name: Commit Docs Pages
