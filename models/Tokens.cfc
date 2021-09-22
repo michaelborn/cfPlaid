@@ -53,9 +53,7 @@ component extends="BaseRequest" {
 	 * https://plaid.com/docs/api/tokens/#itemaccess_tokeninvalidate
 	 */
 	public struct function invalidateToken( required string access_token ){
-		return handleResponse(
-			hyper.post( "/item/access_token/invalidate" )
-		);
+		return handleResponse( hyper.post( "/item/access_token/invalidate" ) );
 	}
 
 	/**
@@ -65,9 +63,7 @@ component extends="BaseRequest" {
 	 * https://plaid.com/docs/api/tokens/#linktokenget
 	 */
 	public struct function getLinkToken( required string access_token ){
-		return handleResponse(
-			plaidClient.post( "/link/token/get" )
-		);
+		return handleResponse( plaidClient.post( "/link/token/get" ) );
 	}
 
 }
