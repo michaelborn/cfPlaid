@@ -1,7 +1,7 @@
 component {
 
 	property name="settings" inject="coldbox:modulesettings:cfPlaid";
-	property name="hyper"    inject="HyperBuilder@hyper";
+	property name="plaidClient"    inject="PlaidClient@cfPlaid";
 
 	public component function init(){
 		return this;

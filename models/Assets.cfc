@@ -20,11 +20,9 @@ component extends="BaseRequest" {
 		struct options = {}
 	){
 		return handleResponse(
-			hyper.post(
-				url  = settings.api_url & "/asset_report/create",
+			plaidClient.post(
+				url  = "/asset_report/create",
 				body = {
-					"client_id"     : settings.api_client_id,
-					"secret"        : settings.api_client_secret,
 					"access_tokens" : [ arguments.access_token ],
 					"days_requested": arguments.days_requested,
 					"options"       : arguments.options

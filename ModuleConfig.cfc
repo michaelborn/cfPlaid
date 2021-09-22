@@ -30,17 +30,17 @@ component {
 			api_client_secret : getSystemSetting( "PLAID_CLIENT_SECRET" )
 		};
 
-        // binder.map( "PlaidClient" )
-        //     .to( "hyper.models.HyperBuilder" )
-        //     .asSingleton()
-        //     .initWith(
-        //         baseUrl = settings.api_url,
-        //         body = {
-		// 			"client_id"    : settings.api_client_id,
-		// 			"secret"       : settings.api_client_secret
-		//			"access_token" : arguments.access_token
-        //         }
-        //     );
+        binder.map( "PlaidClient@cfPlaid" )
+            .to( "hyper.models.HyperBuilder" )
+            .asSingleton()
+            .initWith(
+                baseUrl = settings.api_url,
+                body = {
+					"client_id"    : settings.api_client_id,
+					"secret"       : settings.api_client_secret
+					"access_token" : arguments.access_token
+                }
+            );
 	}
 
 }
