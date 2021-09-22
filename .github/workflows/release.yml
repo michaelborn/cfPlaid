@@ -56,28 +56,12 @@ jobs:
       GA_COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
       MAIN_BRANCH: "main"
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-
-      - name: Setup Java JDK
-        uses: actions/setup-java@v1.4.3
-        with:
-          java-version: 11 
-
-      - name: Set Up CommandBox
-        uses: elpete/setup-commandbox@v1.0.0
-      
-      - name: Install and Configure Semantic Release
-        run: |
-          box install commandbox-semantic-release
-          box config set verboseErrors=true
-          box config set endpoints.forgebox.APIToken=${{ secrets.FORGEBOX_TOKEN }}
-          box config set modules.commandbox-semantic-release.targetBranch=${{ env.MAIN_BRANCH }}
-          box config set modules.commandbox-semantic-release.plugins='{ "VerifyConditions": "GitHubActionsConditionsVerifier@commandbox-semantic-release", "FetchLastRelease": "ForgeBoxReleaseFetcher@commandbox-semantic-release", "RetrieveCommits": "JGitCommitsRetriever@commandbox-semantic-release", "ParseCommit": "EmojiLogCommitParser@commandbox-semantic-release", "FilterCommits": "DefaultCommitFilterer@commandbox-semantic-release", "AnalyzeCommits": "DefaultCommitAnalyzer@commandbox-semantic-release", "VerifyRelease": "NullReleaseVerifier@commandbox-semantic-release", "GenerateNotes": "GitHubMarkdownNotesGenerator@commandbox-semantic-release", "UpdateChangelog": "FileAppendChangelogUpdater@commandbox-semantic-release", "CommitArtifacts": "GitHubArtifactsCommitter@commandbox-semantic-release", "PublishRelease": "ForgeBoxReleasePublisher@commandbox-semantic-release", "PublicizeRelease": "GitHubReleasePublicizer@commandbox-semantic-release" }'
-      
-      - name: Run Semantic Release
+      - uses: actions/checkout@v2
+      - uses: michaelborn/semantic-release-action@v2
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: box semantic-release
+          GA_COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+        with:
+          forgeboxToken: ${{ secrets.FORGEBOX_TOKEN }}
+          branch: ${{ env.MAIN_BRANCH }}
+          plugins: '{ "VerifyConditions": "GitHubActionsConditionsVerifier@commandbox-semantic-release", "FetchLastRelease": "ForgeBoxReleaseFetcher@commandbox-semantic-release", "RetrieveCommits": "JGitCommitsRetriever@commandbox-semantic-release", "ParseCommit": "EmojiLogCommitParser@commandbox-semantic-release", "FilterCommits": "DefaultCommitFilterer@commandbox-semantic-release", "AnalyzeCommits": "DefaultCommitAnalyzer@commandbox-semantic-release", "VerifyRelease": "NullReleaseVerifier@commandbox-semantic-release", "GenerateNotes": "GitHubMarkdownNotesGenerator@commandbox-semantic-release", "UpdateChangelog": "FileAppendChangelogUpdater@commandbox-semantic-release", "CommitArtifacts": "GitHubArtifactsCommitter@commandbox-semantic-release", "PublishRelease": "ForgeBoxReleasePublisher@commandbox-semantic-release", "PublicizeRelease": "GitHubReleasePublicizer@commandbox-semantic-release" }'

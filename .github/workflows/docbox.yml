@@ -12,11 +12,15 @@ jobs:
   docs:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: michaelborn/commandbox-action@v1
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      
+      - name: Generate Docs
+        uses: michaelborn/commandbox-action@v1
         with:
           cmd: docbox generate mapping=cfPlaid excludes=test|ModuleConfig strategy-outputDir=docs strategy-projectTitle=cfPlaid
-      - name: Commit Docs Pages
+      
+      - name: Commit Docs to Repo
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "📖 DOC: Auto-generate DocBox API docs"
