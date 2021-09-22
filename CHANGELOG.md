@@ -1,3 +1,17 @@
+# v1.0.7
+## 15 Sep 2021 — 10:45:50 UTC
+
+### 👌 IMPROVE
+
++ __\*:__ Drop old/unused "generic" commandbox action
+ ([0932704](https://github.com/michaelborn/cfPlaid//commit/0932704da0e822e8511e908a07d2636c2fa2974b))
+
+### 📝 OTHER
+
++ __\*:__ Merge branch 'main' of github.com:michaelborn/cfPlaid into main
+ ([b2468fe](https://github.com/michaelborn/cfPlaid//commit/b2468fede97e39df9e94f1e672c1231fd66b455c))
+
+
 # v1.0.6
 ## 14 Sep 2021 — 10:21:51 UTC
 
