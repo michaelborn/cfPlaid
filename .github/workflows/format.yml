@@ -16,7 +16,7 @@ on:
       - '**.cfc'
 
 jobs:
-  docs:
+  format:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
