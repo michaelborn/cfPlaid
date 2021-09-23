@@ -1,0 +1,18 @@
+name: Fixinator
+
+on: [push, pull_request]
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      
+      - name: Run Fixinator Security Audit
+        uses: ./.github/actions/fixinator
+        with:
+          api_key: ${{ secrets.FIXINATOR_KEY }}
+          path: models,interceptors
+          confidence: medium
+          severity: low
