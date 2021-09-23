@@ -15,11 +15,10 @@ FIXINATOR_FAILONISSUES=$9
 # CONFIGURATION
 # Since Fixinator uses underscores in its module configuration, we can't do this with a simple env var substitution.
 ###
-CONFIG_SETTINGS="modules.fixinator.api_key=$FIXINATOR_API_KEY"
+box config set modules.fixinator.api_key=$FIXINATOR_API_KEY
 if [[ -n $API_URL ]]; then
-    CONFIG_SETTINGS="$CONFIG_SETTINGS modules.fixinator.api_key=$API_URL"
+    box config set modules.fixinator.api_url=$API_URL"
 fi
-box config set $CONFIG_SETTINGS
 
 ###
 # RUN IT
