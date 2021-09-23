@@ -28,6 +28,6 @@ jobs:
         uses: ./.github/actions/fixinator
         with:
           api_key: ${{ secrets.FIXINATOR_KEY }}
-          path: models,interceptors
+          path: ModuleConfig.cfc,models
           confidence: medium
           severity: low
