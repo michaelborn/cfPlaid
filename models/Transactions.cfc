@@ -24,9 +24,9 @@ component extends="BaseRequest" {
 			plaidClient.post(
 				url  = "/transactions/get",
 				body = {
-					"start_date"   : arguments.start_date,
-					"end_date"     : arguments.end_date,
-					"options"      : arguments.options
+					"start_date" : arguments.start_date,
+					"end_date"   : arguments.end_date,
+					"options"    : arguments.options
 				}
 			)
 		);
