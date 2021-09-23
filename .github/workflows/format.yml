@@ -16,22 +16,7 @@ on:
       - '**.cfc'
 
 jobs:
-  docs:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
-
-      - name: Run CFFormat
-        uses: michaelborn/commandbox-action@v1
-        with:
-          cmd: cfformat run path=models,tests/specs --overwrite
-
-      - name: Commit Format Changes
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: "👌 IMPROVE: Auto-format cfcs via cfformat"
-  format2:
+  cfformat-installed-in-workflow:
     name: Format
     runs-on: ubuntu-latest
     steps:
@@ -52,3 +37,18 @@ jobs:
 
       - name: Run CFFormat
         run: box cfformat run path=models,handlers,interceptors,tests/specs --overwrite
+  cfformat-with-reusable-github-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Run CFFormat
+        uses: michaelborn/commandbox-action@v1
+        with:
+          cmd: cfformat run path=models,tests/specs --overwrite
+
+      - name: Commit Format Changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "👌 IMPROVE: Auto-format cfcs via cfformat"
