@@ -17,7 +17,7 @@ FIXINATOR_FAILONISSUES=$9
 ###
 box config set modules.fixinator.api_key=$FIXINATOR_API_KEY
 if [[ -n $API_URL ]]; then
-    box config set modules.fixinator.api_url=$API_URL"
+    box config set modules.fixinator.api_url=$API_URL
 fi
 
 ###
