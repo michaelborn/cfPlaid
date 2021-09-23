@@ -1,6 +1,22 @@
 name: Fixinator
 
-on: [push, pull_request]
+on: 
+  push:
+    branches-ignore:
+      - "main"
+      - "master"
+      - "development"
+    # Only run if *.cfc files are modified
+    paths:
+      - '**.cfc'
+  pull_request:
+    branches:
+      - main
+      - master
+      - development
+    # Only run if *.cfc files are modified
+    paths:
+      - '**.cfc'
 
 jobs:
   audit:
