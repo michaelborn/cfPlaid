@@ -1,7 +1,6 @@
 #!/bin/sh
 
 # Arguments are passed in from action.yml through the Dockerfile
-API_KEY=$1
 API_URL=$2
 FIXINATOR_PATH=$3
 FIXINATOR_CONFIDENCE=$4
@@ -16,7 +15,7 @@ FIXINATOR_FAILONISSUES="${10}"
 # CONFIGURATION
 # Since Fixinator uses underscores in its module configuration, we can't do this with a simple env var substitution.
 ###
-CONFIG_SETTINGS="modules.fixinator.api_key=$API_KEY"
+CONFIG_SETTINGS="modules.fixinator.api_key=$FIXINATOR_API_KEY"
 if [[ -n $API_URL ]]; then
     CONFIG_SETTINGS="$CONFIG_SETTINGS modules.fixinator.api_key=$API_URL"
 fi

@@ -41,7 +41,6 @@ runs:
   using: "docker"
   image: "Dockerfile"
   args:
-    - ${{ inputs.api_key }}
     - ${{ inputs.api_url }}
     - ${{ inputs.path }}
     - ${{ inputs.confidence }}
@@ -51,6 +50,8 @@ runs:
     - ${{ inputs.resultFormat }}
     - ${{ inputs.ignorePaths }}
     - ${{ inputs.failOnIssues }}
+  env:
+    FIXINATOR_API_KEY: ${{ inputs.api_key }}
 branding:
   icon: 'shield'
   color: 'orange'
