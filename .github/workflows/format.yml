@@ -16,8 +16,8 @@ on:
       - '**.cfc'
 
 jobs:
-  cfformat-installed-in-workflow:
-    name: Format
+  format1:
+    name: CFFormat Installed In Workflow
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -37,7 +37,8 @@ jobs:
 
       - name: Run CFFormat
         run: box cfformat run path=models,handlers,interceptors,tests/specs --overwrite
-  cfformat-with-reusable-github-action:
+  format2:
+    name: CFFormat With Reusable GitHub Action
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
