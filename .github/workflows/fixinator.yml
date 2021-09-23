@@ -3,7 +3,8 @@ name: Fixinator
 on: [push, pull_request]
 
 jobs:
-  format:
+  audit:
+    name: Fixinator audit
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
