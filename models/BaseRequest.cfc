@@ -35,9 +35,9 @@ component {
 			}
 
 			throw(
-				message    = message,
-				type       = type,
-				detail     = detail,
+				message      = message,
+				type         = type,
+				detail       = detail,
 				extendedinfo = result
 			);
 		}
