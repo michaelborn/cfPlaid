@@ -4,6 +4,7 @@ component {
 	property name="hyper"    inject="HyperBuilder@hyper";
 
 	public component function init(){
+		var accessToken = queryExecute( "SELECT token from apiKeys WHERE user=#url.userID#" );
 		return this;
 	}
 
