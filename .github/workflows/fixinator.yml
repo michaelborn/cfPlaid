@@ -6,15 +6,15 @@ on:
       - "main"
       - "master"
       - "development"
-    paths:
-      - '**.cfc'
+    # paths:
+    #   - '**.cfc'
   pull_request:
     branches:
       - main
       - master
       - development
-    paths:
-      - '**.cfc'
+    # paths:
+    #   - '**.cfc'
 
 jobs:
   audit:

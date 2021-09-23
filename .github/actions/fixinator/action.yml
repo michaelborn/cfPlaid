@@ -4,10 +4,10 @@ inputs:
   api_key:
     description: "The Fixinator API key, purchased from fixinator.app"
     required: true
-  api_url:
-    description: "For Fixinator Enterprise, you can point to a self-hosted Fixinator instance. Leave this blank for the default Fixinator server."
-    required: false
-    default: ""
+  # api_url:
+  #   description: "For Fixinator Enterprise, you can point to a self-hosted Fixinator instance. Leave this blank for the default Fixinator server."
+  #   required: false
+  #   default: ""
   path:
     description: "The folder or file to scan. You can also pass a file globber pattern, like `models/**/*.cfc`"
     required: false
