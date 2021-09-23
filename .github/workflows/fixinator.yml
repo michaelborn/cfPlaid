@@ -25,7 +25,7 @@ jobs:
         uses: actions/checkout@v2
       
       - name: Run Fixinator Security Audit
-        uses: ./.github/actions/fixinator
+        uses: Ortus-Solutions/fixinator-action@v1
         with:
           api_key: ${{ secrets.FIXINATOR_KEY }}
           path: ModuleConfig.cfc,models
