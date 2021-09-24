@@ -24,7 +24,7 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v2
       
-      - name: Run Fixinator Security Audit
+      - name: Run Fixinator Security Scan
         uses: Ortus-Solutions/fixinator-action@v1
         with:
           api_key: ${{ secrets.FIXINATOR_KEY }}
