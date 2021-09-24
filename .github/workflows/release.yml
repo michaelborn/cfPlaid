@@ -54,7 +54,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: ./.github/actions/release
+      - uses: Ortus-Solutions/semantic-release-action@v1
         with:
           githubToken: ${{ secrets.GH_TOKEN }}
           excludeCommit: ${{ github.event.head_commit.message }}
