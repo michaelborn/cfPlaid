@@ -1,3 +1,12 @@
+# v1.0.10
+## 24 Sep 2021 — 03:32:01 UTC
+
+### 🐛 FIX
+
++ __\*:__ Correct release branch name for semantic release
+ ([7657025](https://github.com/michaelborn/cfPlaid//commit/765702590bd24a0e03a35359a1c572f6a29d038b))
+
+
 # v1.0.8
 ## 22 Sep 2021 — 20:12:30 UTC
 
