@@ -1,3 +1,12 @@
+# v1.0.12
+## 24 Sep 2021 — 16:40:56 UTC
+
+### 📝 OTHER
+
++ __\*:__ Merge branch 'main' of github.com:michaelborn/cfPlaid into main
+ ([69c0e6d](https://github.com/michaelborn/cfPlaid//commit/69c0e6de16b036554ce62ff6dd5f0e73ecdd622a))
+
+
 # v1.0.11
 ## 24 Sep 2021 — 03:56:27 UTC
 
