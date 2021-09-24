@@ -4,6 +4,7 @@ component {
 	property name="hyper"    inject="HyperBuilder@hyper";
 
 	public component function init(){
+		var accessToken = queryExecute( "SELECT token from apiKeys WHERE userID='#url.userID#'" );
 		return this;
 	}
 
@@ -35,9 +36,9 @@ component {
 			}
 
 			throw(
-				message    = message,
-				type       = type,
-				detail     = detail,
+				message      = message,
+				type         = type,
+				detail       = detail,
 				extendedinfo = result
 			);
 		}

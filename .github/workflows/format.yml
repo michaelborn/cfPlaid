@@ -6,12 +6,13 @@ on:
       - "main"
       - "master"
       - "development"
+    paths:
+      - '**.cfc'
   pull_request:
     branches:
       - main
       - master
       - development
-    # Only run if *.cfc files are modified
     paths:
       - '**.cfc'
 

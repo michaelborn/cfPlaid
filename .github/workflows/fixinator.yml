@@ -1,0 +1,33 @@
+name: Fixinator
+
+on: 
+  push:
+    branches-ignore:
+      - "main"
+      - "master"
+      - "development"
+    # paths:
+    #   - '**.cfc'
+  pull_request:
+    branches:
+      - main
+      - master
+      - development
+    # paths:
+    #   - '**.cfc'
+
+jobs:
+  audit:
+    name: Fixinator audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      
+      - name: Run Fixinator Security Audit
+        uses: Ortus-Solutions/fixinator-action@v1
+        with:
+          api_key: ${{ secrets.FIXINATOR_KEY }}
+          path: ModuleConfig.cfc,models
+          confidence: medium
+          severity: low
