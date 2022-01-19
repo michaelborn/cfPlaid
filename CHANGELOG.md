@@ -1,3 +1,30 @@
+# v1.0.11
+## 24 Sep 2021 — 03:56:27 UTC
+
+### 📝 OTHER
+
++ __\*:__ Merge branch 'main' of github.com:michaelborn/cfPlaid into main
+ ([acdfdde](https://github.com/michaelborn/cfPlaid//commit/acdfdded0227e24b1bd2f85ce81a726012d94329))
+
+
+# v1.0.10
+## 24 Sep 2021 — 03:32:01 UTC
+
+### 🐛 FIX
+
++ __\*:__ Correct release branch name for semantic release
+ ([7657025](https://github.com/michaelborn/cfPlaid//commit/765702590bd24a0e03a35359a1c572f6a29d038b))
+
+
+# v1.0.8
+## 22 Sep 2021 — 20:12:30 UTC
+
+### 📝 OTHER
+
++ __\*:__ Merge branch 'main' of github.com:michaelborn/cfPlaid into main
+ ([1c1abfb](https://github.com/michaelborn/cfPlaid//commit/1c1abfbd131b1dc3bcfc5f7545b43a573a3e090e))
+
+
 # v1.0.7
 ## 15 Sep 2021 — 10:45:50 UTC
 
