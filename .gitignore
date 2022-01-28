@@ -1,6 +1,7 @@
 .vscode
 .env
 
+tests/engine
 .artifacts/**
 .tmp/**
 
