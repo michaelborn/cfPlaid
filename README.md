@@ -6,6 +6,9 @@ Integrate with the [Plaid API](https://plaid.com/docs/api/) from CFML.
 
 ## Features
 
+* Basic Account requests
+* More coming soon!
+
 ## Setup
 
 1. Install this module in your app - `box install cfPlaid`

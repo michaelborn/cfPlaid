@@ -1,8 +1,8 @@
 {
-    "name":"cfplaid-lucee@5",
+    "name":"cfplaid-adobe@2016",
     "app":{
-        "serverHomeDirectory":".engine/lucee5",
-        "cfengine":"lucee@5"
+        "serverHomeDirectory":"engine/adobe2016",
+        "cfengine":"adobe@2016"
     },
     "web":{
         "http":{
@@ -11,7 +11,7 @@
         "rewrites":{
             "enable":"true"
         },
-        "aliases":{
+		"aliases":{
             "/moduleroot/cfplaid":"../"
         }
     },
