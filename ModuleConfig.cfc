@@ -25,9 +25,9 @@ component {
 				"https://sandbox.plaid.com"
 			),
 			// You can retrieve this from https://dashboard.plaid.com/team/keys
-			api_client_id     : getSystemSetting( "PLAID_CLIENT_ID" ),
+			api_client_id     : getSystemSetting( "PLAID_CLIENT_ID", "none" ),
 			// You can retrieve this from https://dashboard.plaid.com/team/keys
-			api_client_secret : getSystemSetting( "PLAID_CLIENT_SECRET" )
+			api_client_secret : getSystemSetting( "PLAID_CLIENT_SECRET", "none_defined" )
 		};
 
         binder.map( "PlaidClient@cfPlaid" )
@@ -36,9 +36,9 @@ component {
             .initWith(
                 baseUrl = settings.api_url,
                 body = {
-					"client_id"    : settings.api_client_id,
-					"secret"       : settings.api_client_secret
-					"access_token" : arguments.access_token
+					  "client_id"    : settings.api_client_id
+					, "secret"       : settings.api_client_secret
+					//, "access_token" : arguments.access_token
                 }
             );
 	}

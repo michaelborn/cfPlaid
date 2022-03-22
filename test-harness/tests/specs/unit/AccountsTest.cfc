@@ -1,7 +1,7 @@
 /**
  * Test the Accounts API wrapper.
  */
-component extends="coldbox.system.testing.BaseModelTest" model="models.Accounts" {
+component extends="coldbox.system.testing.BaseModelTest" model="cfPlaid.models.Accounts" {
 
 	/*********************************** LIFE CYCLE Methods ***********************************/
 

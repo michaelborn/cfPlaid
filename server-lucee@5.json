@@ -1,5 +1,5 @@
 {
-    "name":"cfplaid-lucee@5",
+    "name":"cfPlaid-lucee@5",
     "app":{
         "serverHomeDirectory":"engine/lucee5",
         "cfengine":"lucee@5"
@@ -11,9 +11,13 @@
         "rewrites":{
             "enable":"true"
         },
+        "webroot":"test-harness",
         "aliases":{
-            "/moduleroot/cfplaid":"../"
+            "/moduleroot/cfPlaid":"./"
         }
     },
-    "openBrowser":"false"
+    "openBrowser":"false",
+    "cfconfig":{
+        "file":".cfconfig.json"
+    }
 }

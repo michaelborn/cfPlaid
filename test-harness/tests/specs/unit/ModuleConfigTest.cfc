@@ -7,6 +7,12 @@ component extends="coldbox.system.testing.BaseTestCase" {
 
 	function beforeAll(){
 		super.beforeAll();
+
+		// var moduleService = getController().getModuleService();
+
+        // if( !moduleService.isModuleRegistered( "cfPlaid" ) ){
+        //     moduleService.registerAndActivateModule( "cfPlaid" );
+        // }
 	}
 
 	function afterAll(){

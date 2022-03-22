@@ -1,5 +1,5 @@
 {
-    "name":"cfplaid-adobe@2018",
+    "name":"cfPlaid-adobe@2018",
     "app":{
         "serverHomeDirectory":"engine/adobe2018",
         "cfengine":"adobe@2018"
@@ -11,9 +11,13 @@
         "rewrites":{
             "enable":"true"
         },
+		"webroot": "test-harness",
 		"aliases":{
-            "/moduleroot/cfplaid":"../"
+            "/moduleroot/cfPlaid":"./"
         }
     },
-    "openBrowser":"false"
+    "openBrowser":"false",
+	"cfconfig": {
+		"file" : ".cfconfig.json"
+	}
 }
