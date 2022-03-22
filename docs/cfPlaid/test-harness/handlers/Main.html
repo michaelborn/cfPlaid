@@ -3,8 +3,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Accounts</title>
-	<meta name="keywords" content="cfPlaid.models.concurrent.Callable interface">
+	<title>Main</title>
+	<meta name="keywords" content="cfPlaid.test-harness.handlers.concurrent.Callable interface">
 	<!-- common assets -->
 	
 
@@ -12,13 +12,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel ="stylesheet" type="text/css" href="../../bootstrap/css/bootstrap.min.css">
-<link rel ="stylesheet" type="text/css" href="../../stylesheet.css">
+<link rel ="stylesheet" type="text/css" href="../../../bootstrap/css/bootstrap.min.css">
+<link rel ="stylesheet" type="text/css" href="../../../stylesheet.css">
 	
 <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,700,700italic|Ubuntu+Mono' rel='stylesheet' type='text/css' />
 	
-<script src="../../bootstrap/js/jquery-2.1.0.min.js" type="text/javascript"></script>
-<script src="../../bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../../../bootstrap/js/jquery-2.1.0.min.js" type="text/javascript"></script>
+<script src="../../../bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 
 <script>
 $(document).ready(function() {
@@ -30,14 +30,14 @@ $(document).ready(function() {
 });
 </script>
 	<!-- syntax highlighter -->
-	<link type="text/css" rel="stylesheet" href="../../highlighter/styles/shCoreDefault.css">
-	<script src="../../highlighter/scripts/shCore.js"></script>
-	<script src="../../highlighter/scripts/shBrushColdFusion.js"></script>
-	<script src="../../highlighter/scripts/shBrushXml.js"></script>
-	<script src="../../highlighter/scripts/shBrushSql.js"></script>
-	<script src="../../highlighter/scripts/shBrushJScript.js"></script>
-	<script src="../../highlighter/scripts/shBrushJava.js"></script>
-	<script src="../../highlighter/scripts/shBrushCss.js"></script>
+	<link type="text/css" rel="stylesheet" href="../../../highlighter/styles/shCoreDefault.css">
+	<script src="../../../highlighter/scripts/shCore.js"></script>
+	<script src="../../../highlighter/scripts/shBrushColdFusion.js"></script>
+	<script src="../../../highlighter/scripts/shBrushXml.js"></script>
+	<script src="../../../highlighter/scripts/shBrushSql.js"></script>
+	<script src="../../../highlighter/scripts/shBrushJScript.js"></script>
+	<script src="../../../highlighter/scripts/shBrushJava.js"></script>
+	<script src="../../../highlighter/scripts/shBrushCss.js"></script>
 	<script type="text/javascript">SyntaxHighlighter.all();</script>
 </head>
 
@@ -68,7 +68,7 @@ $(document).ready(function() {
 	    	<ul class="nav navbar-nav">
 				
 					
-					<li><a href="../../overview-summary.html"><i class="glyphicon glyphicon-plane"></i> overview</a></li>
+					<li><a href="../../../overview-summary.html"><i class="glyphicon glyphicon-plane"></i> overview</a></li>
 					
 				
 
@@ -96,7 +96,7 @@ $(document).ready(function() {
 	      	</ul>
 
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="../../index.html?cfPlaid/models/Accounts.html" target="_top">
+				<li><a href="../../../index.html?cfPlaid/test-harness/handlers/Main.html" target="_top">
 					<i class="glyphicon glyphicon-fullscreen"></i> Frames
 					</a>
 				</li>
@@ -114,7 +114,7 @@ $(document).ready(function() {
 
 <!-- Package -->
 <div class="pull-right">
-	<a href="package-summary.html" title="Package: cfPlaid.models"><span class="label label-success">cfPlaid.models</span></a>
+	<a href="package-summary.html" title="Package: cfPlaid.test-harness.handlers"><span class="label label-success">cfPlaid.test-harness.handlers</span></a>
 </div>
 
 <h2>
@@ -122,7 +122,7 @@ $(document).ready(function() {
 
 Class
 
- Accounts</h2>
+ Main</h2>
 
 
 
@@ -132,14 +132,6 @@ Class
 
 
 	
-		
-	
-	
-
-	
-		
-		
-			
 		
 	
 	
@@ -155,8 +147,7 @@ Class
 
 <!-- Inheritance Tree-->
 <pre style="background:white">lucee.Component
-    <img src="../../resources/inherit.gif" alt="extended by "><a href="../../cfPlaid/models/BaseRequest.html" title="class in cfPlaid.models">cfPlaid.models.BaseRequest</a>
-      <img src="../../resources/inherit.gif" alt="extended by ">cfPlaid.models.Accounts
+    <img src="../../../resources/inherit.gif" alt="extended by ">cfPlaid.test-harness.handlers.Main
 </pre>
 
 
@@ -171,7 +162,7 @@ Class
 
 
 <div id="class-hint">
-	<p>Handle Plaid API Account Balance requests</p>
+	<p>My Event Handler Hint</p>
 </div>
 
 
@@ -198,17 +189,6 @@ Class
 			&nbsp;
 			
 		
-			
-		
-			
-			
-			<li class="label label-danger label-annotations">
-				see
-				
-				: https://plaid.com/docs/api/products/#balance
-				
-			</li>
-			&nbsp;
 			
 		
 			
@@ -273,13 +253,11 @@ Class
 	
 	<tr>
 		<td align="right" valign="top" width="1%">
-			<code>struct</code>
+			<code>any</code>
 		</td>
 		<td>
-			<strong><a href="Accounts.html#getBalances()">getBalances</A></strong>([struct options='[runtime expression]'])
+			<strong><a href="Main.html#index()">index</A></strong>([any event], [any rc], [any prc])
 			<br>
-			
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Retreive Plaid account balance data.
 			
 		</td>
 	</tr>
@@ -290,47 +268,6 @@ Class
 
 <a name="inherited_methods"><!-- --></a>
 
-
-	
-
-	
-
-	&nbsp;
-	<a name="methods_inherited_from_class_cfPlaid.models.BaseRequest"><!-- --></a>
-	<table class="table table-hover table-bordered">
-		<tr class="info">
-			<th align="left">
-				<strong>Methods inherited from class <kbd><a href="../../cfPlaid/models/BaseRequest.html" title="class in cfPlaid.models">cfPlaid.models.BaseRequest</a></kbd></strong>
-			</th>
-		</tr>
-		<tr>
-			<td>
-				
-				
-				
-					
-					
-					
-					
-					
-					
-				
-					
-					
-					
-						
-					
-					
-					
-					
-				
-
-				
-					<a href="../../cfPlaid/models/BaseRequest.html#handleResponse()">handleResponse</a>, <a href="../../cfPlaid/models/BaseRequest.html#init()">init</a>
-				
-			</td>
-		</tr>
-	</table>
 
 	
 
@@ -386,20 +323,16 @@ Class
 
 
 	
-	<a name="getBalances()"><!-- --></a>
+	<a name="index()"><!-- --></a>
 	<h3>
-		getBalances
+		index
 		
 	</h3>
 
-	<kbd>public struct <strong>getBalances</strong>([struct options='[runtime expression]'])</kbd>
+	<kbd>public any <strong>index</strong>([any event], [any rc], [any prc])</kbd>
 
 	<br><br>
 
-	
-		<p>Retreive Plaid account balance data
-See Plaid API docs
-https://plaid.com/docs/api/products/#balance</p>
 	
 
 	
@@ -416,7 +349,11 @@ https://plaid.com/docs/api/products/#balance</p>
 		<dl>
 		<dt><strong>Parameters:</strong></dt>
 		
-		<dd><code>options</code></dd>
+		<dd><code>event</code></dd>
+		
+		<dd><code>rc</code></dd>
+		
+		<dd><code>prc</code></dd>
 		
 		</dl>
 	
