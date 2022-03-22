@@ -1,7 +1,5 @@
 /**
- * The base model test case will use the 'model' annotation as the instantiation path
- * and then create it, prepare it for mocking and then place it in the variables scope as 'model'. It is your
- * responsibility to update the model annotation instantiation path and init your model.
+ * Test the Accounts API wrapper.
  */
 component extends="coldbox.system.testing.BaseModelTest" model="models.Accounts" {
 
