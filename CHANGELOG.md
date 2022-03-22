@@ -1,3 +1,12 @@
+# v1.1.0
+## 28 Jan 2022 — 21:45:18 UTC
+
+### 👌 IMPROVE
+
++ __\*:__ Ignore engine artifacts
+ ([b23d95f](https://github.com/michaelborn/cfPlaid//commit/b23d95f5f44959150319a7a047b171dc0c9d17e5))
+
+
 # v1.0.11
 ## 24 Sep 2021 — 03:56:27 UTC
 

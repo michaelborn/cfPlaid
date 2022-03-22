@@ -5,11 +5,16 @@ tests/engine
 .artifacts/**
 .tmp/**
 
-tests/resources/app/coldbox
+# app deps
+coldbox
 testbox
-tests/logs/**
 modules
-tests/.env
+
+# test deps
+test-harness/resources/app/coldbox
+test-harness/engine
+test-harness/logs/**
+test-harness/.env
 
 # modules
 modules/**
