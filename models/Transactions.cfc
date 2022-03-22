@@ -21,15 +21,12 @@ component extends="BaseRequest" {
 		struct options = {}
 	){
 		return handleResponse(
-			hyper.post(
-				url  = settings.api_url & "/transactions/get",
+			plaidClient.post(
+				url  = "/transactions/get",
 				body = {
-					"client_id"    : settings.api_client_id,
-					"secret"       : settings.api_client_secret,
-					"access_token" : arguments.access_token,
-					"start_date"   : arguments.start_date,
-					"end_date"     : arguments.end_date,
-					"options"      : arguments.options
+					"start_date" : arguments.start_date,
+					"end_date"   : arguments.end_date,
+					"options"    : arguments.options
 				}
 			)
 		);

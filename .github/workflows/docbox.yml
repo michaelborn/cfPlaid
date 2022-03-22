@@ -7,6 +7,9 @@ on:
     paths:
       - '**.cfc' # Only run if *.cfc files are modified
 
+env:
+  PACKAGE_NAME: cfPlaid
+
 jobs:
   docs:
     runs-on: ubuntu-latest
@@ -17,9 +20,9 @@ jobs:
       - name: Generate Docs
         uses: Ortus-Solutions/commandbox-action@v1
         with:
-          cmd: docbox generate mapping=cfPlaid excludes=test|ModuleConfig strategy-outputDir=docs strategy-projectTitle=cfPlaid
+          cmd: docbox generate mapping=${{ env.PACKAGE_NAME }} excludes=tests|ModuleConfig strategy-outputDir=docs strategy-projectTitle=${{ env.PACKAGE_NAME }}
       
       - name: Commit Docs to Repo
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "📖 DOC: Auto-generate DocBox API docs"
+          commit_message: "📖 DOC: Auto-generate API docs"

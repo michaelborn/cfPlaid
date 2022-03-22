@@ -17,7 +17,7 @@ on:
       - '**.cfc' # Only run if *.cfc files are modified
 
 jobs:
-  docs:
+  format:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
