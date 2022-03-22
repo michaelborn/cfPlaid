@@ -19,7 +19,13 @@ component extends="coldbox.system.testing.BaseModelTest" model="models.Accounts"
 			api_client_secret : "client-secret-haha"
 		};
 
-		variables.hyperMock         = getMockBox().createMock( "hyper.models.HyperBuilder" );
+		variables.hyperMock         = getMockBox().createMock( "hyper.models.HyperBuilder" ).init(
+			baseUrl = plaidAPISettings.api_url,
+			body = {
+				"client_id"    : plaidAPISettings.api_client_id,
+				"secret"       : plaidAPISettings.api_client_secret
+			}
+		);
 		variables.hyperResponseMock = getMockBox().createMock( "hyper.models.HyperResponse" );
 
 		hyperMock.$(
@@ -34,8 +40,8 @@ component extends="coldbox.system.testing.BaseModelTest" model="models.Accounts"
 			mock         = variables.plaidAPISettings
 		);
 		model.$property(
-			propertyName = "hyper",
-			mock         = hyperMock
+			propertyName = "plaidClient",
+			mock         = variables.hyperMock
 		);
 
 		// init the model object
