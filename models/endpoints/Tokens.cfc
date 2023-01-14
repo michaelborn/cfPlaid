@@ -10,7 +10,7 @@ component extends="BaseRequest" {
 	 * See Plaid docs - https://plaid.com/docs/api/tokens/#linktokencreate
 	 */
 	public struct function createLink( required string redirectURI ){
-		return hyper.post(
+		return plaidClient.post(
 			url  = settings.api_url & "/link/token/create",
 			body = {
 				"client_id"     : settings.api_client_id,
@@ -32,7 +32,7 @@ component extends="BaseRequest" {
 	 * https://plaid.com/docs/api/tokens/#itempublic_tokenexchange
 	 */
 	public struct function exchangeToken( required string public_token ){
-		return hyper.post(
+		return plaidClient.post(
 			url  = "/item/public_token/exchange",
 			body = {
 				"client_id"    : settings.api_client_id,
@@ -49,7 +49,7 @@ component extends="BaseRequest" {
 	 * https://plaid.com/docs/api/tokens/#itemaccess_tokeninvalidate
 	 */
 	public struct function invalidateToken( required string access_token ){
-		return hyper.post( "/item/access_token/invalidate" );
+		return plaidClient.post( "/item/access_token/invalidate" );
 	}
 
 	/**

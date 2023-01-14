@@ -17,7 +17,7 @@ component extends="BaseRequest" {
 		required string access_token,
 		struct options = {}
 	){
-		return hyper.post(
+		return plaidClient.post(
 			url  = settings.api_url & "/item/get",
 			body = {
 				"client_id"    : settings.api_client_id,

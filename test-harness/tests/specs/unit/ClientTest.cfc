@@ -75,7 +75,10 @@ component extends="coldbox.system.testing.BaseModelTest" loadColdbox="true" {
             } );
             describe( "cfPlaid.models.Tokens Suite", function(){
                 it( "should createLink", function(){
-                    var response = variables.model.createLink();
+                    var response = variables.model.createLink(
+                        redirectURI = "http://localhost/"
+                    );
+                    debug( response );
                     expect( response.isSuccess() ).toBeTrue();
                 } );
     
