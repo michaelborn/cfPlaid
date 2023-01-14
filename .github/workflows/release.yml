@@ -16,11 +16,12 @@ jobs:
         cfengine: ["lucee@5", "adobe@2016", "adobe@2018", "adobe@2021"]
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3.2.0
 
       - name: Setup Java JDK
-        uses: actions/setup-java@v1.4.3
+        uses: actions/setup-java@v3.9.0
         with:
+          distribution: "temurin"
           java-version: 11 
 
       - name: Set Up CommandBox
@@ -30,7 +31,6 @@ jobs:
         run: box install
 
       - name: Start server
-        working-directory: ./tests
         run: |
           box set cfconfig_robustExceptionEnabled=true
           box server start cfengine=${{ matrix.cfengine }} port=60299 --noSaveSettings
@@ -53,7 +53,7 @@ jobs:
     needs: tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3.2.0
       - uses: Ortus-Solutions/semantic-release-action@v1.1
         with:
           githubToken: ${{ secrets.GH_TOKEN }}
