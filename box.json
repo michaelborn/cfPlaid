@@ -34,8 +34,8 @@
     },
     "installPaths":{
         "hyper":"modules/hyper/",
-        "testbox":"testbox/",
-        "coldbox":"tests/resources/app/coldbox/"
+        "testbox":"test-harness/testbox/",
+        "coldbox":"test-harness/coldbox/"
     },
     "devDependencies":{
         "testbox":"^4.4.0-snapshot"
