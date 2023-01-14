@@ -80,7 +80,7 @@
 		controller.getModuleService()
 			.registerAndActivateModule(
 				moduleName 		= request.MODULE_NAME,
-				invocationPath 	= "stupidcoldboxmoduleinvocationpath"
+				invocationPath 	= "moduleroot"
 			);
 	}
 

@@ -32,7 +32,7 @@ component{
 	this.mappings[ "/moduleroot" ] 				= moduleRootPath;
 
 	// the coldbox app manually registers and activates this module, and the ModuleService only registers the module if you pass the path of the directory which CONTAINS the module directory - apparantely it'll error if you pass the module directory itself.
-	this.mappings[ "/stupidcoldboxmoduleinvocationpath" ] = reReplaceNoCase( moduleRootPath, "(\\|/)#request.MODULE_NAME#", "" );
+	this.mappings[ "/moduleroot" ] = reReplaceNoCase( moduleRootPath, "(\\|/)#request.MODULE_NAME#", "" );
 
 	// ORM Definitions
 	/**

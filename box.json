@@ -20,8 +20,7 @@
     ],
     "contributors":[],
     "dependencies":{
-        "hyper":"^3.0.0",
-        "coldbox":"^6.5.1+33"
+        "hyper":"^3.0.0"
     },
     "ignore":[
         "**/.*",
@@ -38,7 +37,8 @@
         "coldbox":"test-harness/coldbox/"
     },
     "devDependencies":{
-        "testbox":"^4.4.0-snapshot"
+        "testbox":"^4.4.0-snapshot",
+        "coldbox":"^6.5.1+33"
     },
     "testbox":{
         "runner":[
