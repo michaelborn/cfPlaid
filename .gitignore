@@ -6,7 +6,7 @@
 
 # Engine + Secrets
 .env
-engine
+.engine
 
 # Dependencies
 test-harness/coldbox
