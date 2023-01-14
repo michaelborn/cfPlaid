@@ -34,23 +34,6 @@ component{
 	// the coldbox app manually registers and activates this module, and the ModuleService only registers the module if you pass the path of the directory which CONTAINS the module directory - apparantely it'll error if you pass the module directory itself.
 	this.mappings[ "/moduleroot" ] = reReplaceNoCase( moduleRootPath, "(\\|/)#request.MODULE_NAME#", "" );
 
-	// ORM Definitions
-	/**
-	this.datasource = "coolblog";
-	this.ormEnabled = "true";
-	this.ormSettings = {
-		cfclocation = [ "/root/models" ],
-		logSQL = true,
-		dbcreate = "update",
-		secondarycacheenabled = false,
-		cacheProvider = "ehcache",
-		flushAtRequestEnd = false,
-		eventhandling = true,
-		eventHandler = "cborm.models.EventHandler",
-		skipcfcWithError = false
-	};
-	**/
-
 	function onRequestStart( required targetPage ){
 
 		if( url.keyExists( "fwreinit" ) ){

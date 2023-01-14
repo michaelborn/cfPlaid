@@ -10,20 +10,18 @@ component extends="BaseRequest" {
 	 * See Plaid docs - https://plaid.com/docs/api/tokens/#linktokencreate
 	 */
 	public struct function createLink( required string redirectURI ){
-		return handleResponse(
-			hyper.post(
-				url  = settings.api_url & "/link/token/create",
-				body = {
-					"client_id"     : settings.api_client_id,
-					"secret"        : settings.api_client_secret,
-					"client_name"   : "cbFlannel",
-					"language"      : "en",
-					"country_codes" : [ "US" ],
-					"products"      : [ "transactions" ],
-					"user"          : { "client_user_id" : "MB-test123" },
-					"redirect_uri"  : arguments.redirectURI
-				}
-			)
+		return hyper.post(
+			url  = settings.api_url & "/link/token/create",
+			body = {
+				"client_id"     : settings.api_client_id,
+				"secret"        : settings.api_client_secret,
+				"client_name"   : "cbFlannel",
+				"language"      : "en",
+				"country_codes" : [ "US" ],
+				"products"      : [ "transactions" ],
+				"user"          : { "client_user_id" : "MB-test123" },
+				"redirect_uri"  : arguments.redirectURI
+			}
 		);
 	}
 
@@ -34,15 +32,13 @@ component extends="BaseRequest" {
 	 * https://plaid.com/docs/api/tokens/#itempublic_tokenexchange
 	 */
 	public struct function exchangeToken( required string public_token ){
-		return handleResponse(
-			hyper.post(
-				url  = "/item/public_token/exchange",
-				body = {
-					"client_id"    : settings.api_client_id,
-					"secret"       : settings.api_client_secret,
-					"public_token" : arguments.public_token
-				}
-			)
+		return hyper.post(
+			url  = "/item/public_token/exchange",
+			body = {
+				"client_id"    : settings.api_client_id,
+				"secret"       : settings.api_client_secret,
+				"public_token" : arguments.public_token
+			}
 		);
 	}
 
@@ -53,7 +49,7 @@ component extends="BaseRequest" {
 	 * https://plaid.com/docs/api/tokens/#itemaccess_tokeninvalidate
 	 */
 	public struct function invalidateToken( required string access_token ){
-		return handleResponse( hyper.post( "/item/access_token/invalidate" ) );
+		return hyper.post( "/item/access_token/invalidate" );
 	}
 
 	/**
@@ -63,7 +59,7 @@ component extends="BaseRequest" {
 	 * https://plaid.com/docs/api/tokens/#linktokenget
 	 */
 	public struct function getLinkToken( required string access_token ){
-		return handleResponse( plaidClient.post( "/link/token/get" ) );
+		return plaidClient.post( "/link/token/get" );
 	}
 
 }

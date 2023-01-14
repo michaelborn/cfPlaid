@@ -30,6 +30,10 @@ component {
 			api_client_secret : getSystemSetting( "PLAID_CLIENT_SECRET", "none_defined" )
 		};
 
+		binder
+			.mapDirectory( "cfPlaid.models.endpoints" )
+			.asSingleton();
+
         binder.map( "PlaidClient@cfPlaid" )
             .to( "hyper.models.HyperBuilder" )
             .asSingleton()

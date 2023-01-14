@@ -20,15 +20,13 @@ component extends="BaseRequest" {
 		required string end_date,
 		struct options = {}
 	){
-		return handleResponse(
-			plaidClient.post(
-				url  = "/transactions/get",
-				body = {
-					"start_date" : arguments.start_date,
-					"end_date"   : arguments.end_date,
-					"options"    : arguments.options
-				}
-			)
+		return plaidClient.post(
+			url  = "/transactions/get",
+			body = {
+				"start_date" : arguments.start_date,
+				"end_date"   : arguments.end_date,
+				"options"    : arguments.options
+			}
 		);
 	}
 

@@ -38,7 +38,7 @@
     },
     "devDependencies":{
         "testbox":"^4.4.0-snapshot",
-        "coldbox":"^6.5.1+33"
+        "coldbox":"be"
     },
     "testbox":{
         "runner":[

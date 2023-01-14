@@ -1,8 +1,13 @@
-component {
+/**
+ * Wrap all cfPlaid API calls
+ * 
+ * Requires modern ColdBox due to the new @delegated magic.
+ */
+component accessors="false" {
 
-	property name="settings"    inject="coldbox:modulesettings:cfPlaid";
-	property name="plaidClient" inject="PlaidClient@cfPlaid";
-
+    property name="Accounts" inject="Accounts@cfPlaid" delegate;
+    property name="Tokens" inject="Tokens@cfPlaid" delegate;
+    
 	public component function init(){
 		return this;
 	}
@@ -12,10 +17,8 @@ component {
 	 *
 	 * @response a HyperResponse object for the request.
 	 */
-	private struct function handleResponse( required HyperResponse response ){
-		if ( response.isSuccess() ) {
-			return response.json();
-		} else {
+	private struct function parseAndThrow( required HyperResponse response ){
+		if ( response.isError() ){
 			var result  = response.getData();
 			var message = "Error from Plaid server";
 			var type    = "PlaidCallException";

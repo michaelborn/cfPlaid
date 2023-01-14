@@ -6,7 +6,7 @@
 component extends="BaseRequest" {
 
 	/**
-	 * Retreive Plaid account balance data
+	 * Retrieve Plaid account balance data
 	 *
 	 * See Plaid API docs
 	 * https://plaid.com/docs/api/products/#balance
@@ -15,11 +15,9 @@ component extends="BaseRequest" {
 	 * @end_date Filter by transactions before or on this date. MUST be in YYYY-MM-DD format.
 	 */
 	public struct function getBalances( struct options = {} ){
-		return handleResponse(
-			plaidClient.post(
-				url  = "/accounts/balance/get",
-				body = { "options" : arguments.options }
-			)
+		return plaidClient.post(
+			url  = "/accounts/balance/get",
+			body = { "options" : arguments.options }
 		);
 	}
 

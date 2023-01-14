@@ -19,15 +19,13 @@ component extends="BaseRequest" {
 		required numeric days_requested,
 		struct options = {}
 	){
-		return handleResponse(
-			plaidClient.post(
-				url  = "/asset_report/create",
-				body = {
-					"access_tokens"  : [ arguments.access_token ],
-					"days_requested" : arguments.days_requested,
-					"options"        : arguments.options
-				}
-			)
+		return plaidClient.post(
+			url  = "/asset_report/create",
+			body = {
+				"access_tokens"  : [ arguments.access_token ],
+				"days_requested" : arguments.days_requested,
+				"options"        : arguments.options
+			}
 		);
 	}
 
