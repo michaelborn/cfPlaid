@@ -3,7 +3,14 @@
  *
  * @see https://plaid.com/docs/api/items/
  */
-component extends="BaseRequest" {
+component accessors="false" {
+    
+	property name="settings"    inject="coldbox:modulesettings:cfPlaid";
+	property name="plaidClient" inject="PlaidClient@cfPlaid";
+
+	public component function init(){
+		return this;
+	}
 
 	/**
 	 * Retrieve an Item
@@ -17,14 +24,13 @@ component extends="BaseRequest" {
 		required string access_token,
 		struct options = {}
 	){
-		return plaidClient.post(
-			url  = settings.api_url & "/item/get",
-			body = {
+		return plaidClient
+			.setBody( {
 				"client_id"    : settings.api_client_id,
 				"secret"       : settings.api_client_secret,
 				"access_token" : arguments.access_token
-			}
-		);
+			} )
+			.post( "/item/get" );
 	}
 
 }

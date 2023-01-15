@@ -1,7 +1,14 @@
 /**
  * Handle Plaid API access tokens.
  */
-component extends="BaseRequest" {
+component accessors="false" {
+    
+	property name="settings"    inject="coldbox:modulesettings:cfPlaid";
+	property name="plaidClient" inject="PlaidClient@cfPlaid";
+
+	public component function init(){
+		return this;
+	}
 
 	/**
 	 * Create a Plaid link token.
@@ -10,9 +17,9 @@ component extends="BaseRequest" {
 	 * See Plaid docs - https://plaid.com/docs/api/tokens/#linktokencreate
 	 */
 	public struct function createLink( required string redirectURI ){
-		return plaidClient.post(
-			url  = settings.api_url & "/link/token/create",
-			body = {
+		return plaidClient
+			.asJSON()
+			.setBody( {
 				"client_id"     : settings.api_client_id,
 				"secret"        : settings.api_client_secret,
 				"client_name"   : "cbFlannel",
@@ -21,8 +28,8 @@ component extends="BaseRequest" {
 				"products"      : [ "transactions" ],
 				"user"          : { "client_user_id" : "MB-test123" },
 				"redirect_uri"  : arguments.redirectURI
-			}
-		);
+			} )
+			.post( "/link/token/create" );
 	}
 
 	/**
@@ -32,14 +39,12 @@ component extends="BaseRequest" {
 	 * https://plaid.com/docs/api/tokens/#itempublic_tokenexchange
 	 */
 	public struct function exchangeToken( required string public_token ){
-		return plaidClient.post(
-			url  = "/item/public_token/exchange",
-			body = {
-				"client_id"    : settings.api_client_id,
-				"secret"       : settings.api_client_secret,
+		return plaidClient
+			.asJSON()
+			.setBody( {
 				"public_token" : arguments.public_token
-			}
-		);
+			} )
+			.post( "/item/public_token/exchange" );
 	}
 
 	/**
@@ -49,7 +54,12 @@ component extends="BaseRequest" {
 	 * https://plaid.com/docs/api/tokens/#itemaccess_tokeninvalidate
 	 */
 	public struct function invalidateToken( required string access_token ){
-		return plaidClient.post( "/item/access_token/invalidate" );
+		return plaidClient
+			.asJSON()
+			.setBody( {
+				"access_token" : arguments.access_token
+			} )
+			.post( "/item/access_token/invalidate" );
 	}
 
 	/**
@@ -58,8 +68,13 @@ component extends="BaseRequest" {
 	 * See Plaid API docs
 	 * https://plaid.com/docs/api/tokens/#linktokenget
 	 */
-	public struct function getLinkToken( required string access_token ){
-		return plaidClient.post( "/link/token/get" );
+	public struct function getLinkToken( required string link_token ){
+		return plaidClient
+			.asJSON()
+			.setBody( {
+				"link_token"   : arguments.link_token
+			} )
+			.post( "/link/token/get" );
 	}
 
 }

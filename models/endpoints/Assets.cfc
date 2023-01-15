@@ -3,7 +3,14 @@
  *
  * @see https://plaid.com/docs/api/products/#assets
  */
-component extends="BaseRequest" {
+component accessors="false" {
+    
+	property name="settings"    inject="coldbox:modulesettings:cfPlaid";
+	property name="plaidClient" inject="PlaidClient@cfPlaid";
+
+	public component function init(){
+		return this;
+	}
 
 	/**
 	 * Create an asset report.
@@ -19,14 +26,13 @@ component extends="BaseRequest" {
 		required numeric days_requested,
 		struct options = {}
 	){
-		return plaidClient.post(
-			url  = "/asset_report/create",
-			body = {
-				"access_tokens"  : [ arguments.access_token ],
-				"days_requested" : arguments.days_requested,
-				"options"        : arguments.options
-			}
-		);
+		return plaidClient
+				.setBody( {
+					"access_tokens"  : [ arguments.access_token ],
+					"days_requested" : arguments.days_requested,
+					"options"        : arguments.options
+				} )
+				.post( "/asset_report/create" );
 	}
 
 }

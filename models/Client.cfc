@@ -17,7 +17,7 @@ component accessors="false" {
 	 *
 	 * @response a HyperResponse object for the request.
 	 */
-	private struct function parseAndThrow( required HyperResponse response ){
+	public struct function parseAndThrow( required HyperResponse response ){
 		if ( response.isError() ){
 			var result  = response.getData();
 			var message = "Error from Plaid server";
@@ -41,7 +41,7 @@ component accessors="false" {
 				message      = message,
 				type         = type,
 				detail       = detail,
-				extendedinfo = result
+				extendedinfo = serializeJSON( result )
 			);
 		}
 	}

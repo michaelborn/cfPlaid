@@ -3,7 +3,14 @@
  *
  * @see https://plaid.com/docs/api/products/#transactions
  */
-component extends="BaseRequest" {
+component accessors="false" {
+    
+	property name="settings"    inject="coldbox:modulesettings:cfPlaid";
+	property name="plaidClient" inject="PlaidClient@cfPlaid";
+
+	public component function init(){
+		return this;
+	}
 
 	/**
 	 * Retreive Plaid transaction data for the account associated with the access_token
@@ -20,14 +27,13 @@ component extends="BaseRequest" {
 		required string end_date,
 		struct options = {}
 	){
-		return plaidClient.post(
-			url  = "/transactions/get",
-			body = {
+		return plaidClient
+			.setBody( {
 				"start_date" : arguments.start_date,
 				"end_date"   : arguments.end_date,
 				"options"    : arguments.options
-			}
-		);
+			} )
+			.post( "/transactions/get" );
 	}
 
 }

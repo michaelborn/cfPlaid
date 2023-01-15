@@ -39,10 +39,9 @@ component {
             .asSingleton()
             .initWith(
                 baseUrl = settings.api_url,
-                body = {
-					  "client_id"    : settings.api_client_id
-					, "secret"       : settings.api_client_secret
-					//, "access_token" : arguments.access_token
+                headers = {
+					  "PLAID-CLIENT-ID"    : settings.api_client_id
+					, "PLAID-SECRET"       : settings.api_client_secret
                 }
             );
 	}
