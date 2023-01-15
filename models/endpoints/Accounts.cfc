@@ -18,13 +18,36 @@ component accessors="false" {
 	 * See Plaid API docs
 	 * https://plaid.com/docs/api/products/#balance
 	 *
-	 * @start_date Filter by transactions after or on this date. MUST be in YYYY-MM-DD format.
-	 * @end_date Filter by transactions before or on this date. MUST be in YYYY-MM-DD format.
+	 * @access_token Required Plaid access token.
+	 * @options.start_date Filter by transactions after or on this date. MUST be in YYYY-MM-DD format.
+	 * @options.end_date Filter by transactions before or on this date. MUST be in YYYY-MM-DD format.
 	 */
-	public struct function getBalances( struct options = {} ){
+	public struct function getBalances( required string access_token, struct options = {} ){
 		return plaidClient
-			.setBody( { "options" : arguments.options } )
+			.asJSON()
+			.setBody( {
+				"options"     : arguments.options,
+				"access_token": arguments.access_token
+			} )
 			.post( "/accounts/balance/get" );
+	}
+
+	/**
+	 * Retrieve Plaid accounts
+	 *
+	 * See Plaid API docs
+	 * @url https://plaid.com/docs/api/accounts/#accountsget
+	 *
+	 * @access_token Required Plaid access token.
+	 */
+	public struct function getAccounts( required string access_token, struct options = {} ){
+		return plaidClient
+			.asJSON()
+			.setBody( {
+				"options"     : arguments.options,
+				"access_token": arguments.access_token
+			} )
+			.post( "/accounts/get" );
 	}
 
 }

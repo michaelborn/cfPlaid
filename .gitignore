@@ -5,7 +5,7 @@
 .tmp/**
 
 # Engine + Secrets
-test-harness/.PLAID_CREDENTIALS.json
+.PLAID_CREDENTIALS.json
 .env
 .engine
 
