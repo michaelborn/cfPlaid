@@ -33,13 +33,13 @@ jobs:
       - name: Start server
         run: |
           box set cfconfig_robustExceptionEnabled=true
-          box server start cfengine=${{ matrix.cfengine }} port=60299 --noSaveSettings
+          box server start cfengine=${{ matrix.cfengine }} port=9999 --noSaveSettings
         env:
           PLAID_URL: https://sandbox.plaid.com
           PLAID_CLIENT_ID: ${{ secrets.PLAID_CLIENT_ID }}
           PLAID_CLIENT_SECRET: ${{ secrets.PLAID_CLIENT_SECRET }}
 
-      - run: box testbox run runner="http://localhost:60299/runner.cfm"
+      - run: box testbox run runner="http://localhost:9999/runner.cfm"
 
       - name: Failure Debugging Info
         if: ${{ failure() }}

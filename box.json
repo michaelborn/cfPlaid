@@ -43,7 +43,7 @@
     "testbox":{
         "runner":[
             {
-                "default":"http://localhost:60299/tests/runner.cfm"
+                "default":"http://localhost:9999/tests/runner.cfm"
             }
         ]
     }
