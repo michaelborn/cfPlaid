@@ -98,7 +98,7 @@ component extends="coldbox.system.testing.BaseModelTest" loadColdbox="true" {
                     if ( !response.isSuccess() ){
                         variables.model.parseAndThrow( response );
                     }
-                    debug( response );
+                    // debug( response );
                     expect( response.isSuccess() ).toBeTrue();
                     expect( response.json() ).toHaveKey( "metadata" );
                 } );
@@ -109,14 +109,24 @@ component extends="coldbox.system.testing.BaseModelTest" loadColdbox="true" {
                     if ( !response.isSuccess() ){
                         variables.model.parseAndThrow( response );
                     }
-                    debug( response );
+                    // debug( response );
                     expect( response.isSuccess() ).toBeTrue();
                     expect( response.json() ).toHaveKey( "new_access_token" );
                 } );
             } );
             describe( "cfplaid.models.Transactions Suite", function(){
-                it( "should getBalances", function(){
-                    expect( false ).toBeTrue();
+                it( "should getTransactions", function(){
+                    var response = variables.model.getTransactions(
+                        access_token = variables.PLAID_CREDS[ "access_token" ],
+                        start_date = "2021-01-01",
+                        end_date = "2021-01-01"
+                    );
+
+                    if ( !response.isSuccess() ){
+                        variables.model.parseAndThrow( response );
+                    }
+                    expect( response.isSuccess() ).toBeTrue();
+                    expect( response.json() ).toHaveKey( "accounts" );
                 } );
             } );
         } );

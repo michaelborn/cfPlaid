@@ -28,10 +28,12 @@ component accessors="false" {
 		struct options = {}
 	){
 		return plaidClient
+			.asJSON()
 			.setBody( {
 				"start_date" : arguments.start_date,
 				"end_date"   : arguments.end_date,
-				"options"    : arguments.options
+				"options"    : arguments.options,
+				"access_token" : arguments.access_token
 			} )
 			.post( "/transactions/get" );
 	}

@@ -36,7 +36,7 @@ component accessors="false" {
 	 * Retrieve Plaid accounts
 	 *
 	 * See Plaid API docs
-	 * @url https://plaid.com/docs/api/accounts/#accountsget
+	 * @see https://plaid.com/docs/api/accounts/#accountsget
 	 *
 	 * @access_token Required Plaid access token.
 	 */
