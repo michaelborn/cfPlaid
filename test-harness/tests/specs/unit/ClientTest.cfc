@@ -28,15 +28,17 @@ component extends="coldbox.system.testing.BaseModelTest" loadColdbox="true" {
             describe( "cfplaid.models.Accounts Suite", function(){
                 it( "getBalances", function(){
                     var response = variables.model.getBalances( variables.PLAID_CREDS[ "access_token" ] );
-
+                    variables.model.throwOnError( response );
                     // debug( response );
+
                     expect( response.isSuccess() ).tobeTrue();
                     expect( response.json() ).toHaveKey( "accounts" );
                 } );
                 it( "getAccounts", function(){
                     var response = variables.model.getAccounts( variables.PLAID_CREDS[ "access_token" ] );
-
+                    variables.model.throwOnError( response );
                     // debug( response );
+
                     expect( response.isSuccess() ).tobeTrue();
                     expect( response.json() ).toHaveKey( "accounts" );
                 } );
@@ -48,26 +50,33 @@ component extends="coldbox.system.testing.BaseModelTest" loadColdbox="true" {
                     var response = variables.model.createLink(
                         redirectURI = "http://localhost:9999/accounts/connect"
                     );
-                    if ( !response.isSuccess() ){
-                        variables.model.parseAndThrow( response );
-                    }
+                    variables.model.throwOnError( response );
                     // debug( response );
+
                     expect( response.isSuccess() ).toBeTrue();
                     expect( response.json() )
                         .toHaveKey( "expiration" )
                         .toHaveKey( "request_id")
                         .toHaveKey( "link_token" );
 
-                    variables.link = response.json();
+                    variables.testLink = response.json();
                 } );
 
                 /**
                  * This could potentially be run via a UI/UX testing library like cbPlaywright
                  */
                 xit( "should connect to Plaid in view", function() {
+                    if ( !variables.keyExists( "testLink" ) ){
+                        var response = variables.model.createLink(
+                            redirectURI = "http://localhost:9999/accounts/connect"
+                        );
+                        variables.model.throwOnError( response );
+                        variables.testLink = response.json();
+                    }
+
                     var html = getInstance( "Renderer@coldbox" ).view(
                         view = "plaidLink",
-                        args = { "linkToken" : variables.link[ "link_token" ] } 
+                        args = { "linkToken" : variables.testLink[ "link_token" ] } 
                     );
 
                     writeOutput( html );//abort;
@@ -81,11 +90,9 @@ component extends="coldbox.system.testing.BaseModelTest" loadColdbox="true" {
     
                 xit( "should exchangeToken", function(){
                     var response = variables.model.exchangeToken( publicToken );
-
-                    if ( !response.isSuccess() ){
-                        variables.model.parseAndThrow( response );
-                    }
+                    variables.model.throwOnError( response );
                     // debug( response );
+
                     expect( response.isSuccess() ).toBeTrue();
                     expect( response.json() ).toHaveKey( "access_token" );
 
@@ -94,22 +101,18 @@ component extends="coldbox.system.testing.BaseModelTest" loadColdbox="true" {
     
                 xit( "should getLinkToken", function(){
                     var response = variables.model.getLinkToken( variables.token[ "access_token" ] );
-
-                    if ( !response.isSuccess() ){
-                        variables.model.parseAndThrow( response );
-                    }
+                    variables.model.throwOnError( response );
                     // debug( response );
+
                     expect( response.isSuccess() ).toBeTrue();
                     expect( response.json() ).toHaveKey( "metadata" );
                 } );
     
                 xit( "should invalidateToken", function(){
                     var response = variables.model.invalidateToken( variables.token[ "access_token" ] );
-
-                    if ( !response.isSuccess() ){
-                        variables.model.parseAndThrow( response );
-                    }
+                    variables.model.throwOnError( response );
                     // debug( response );
+
                     expect( response.isSuccess() ).toBeTrue();
                     expect( response.json() ).toHaveKey( "new_access_token" );
                 } );
@@ -123,7 +126,7 @@ component extends="coldbox.system.testing.BaseModelTest" loadColdbox="true" {
                     );
 
                     if ( !response.isSuccess() ){
-                        variables.model.parseAndThrow( response );
+                        variables.model.throwOnError( response );
                     }
                     expect( response.isSuccess() ).toBeTrue();
                     expect( response.json() ).toHaveKey( "accounts" );

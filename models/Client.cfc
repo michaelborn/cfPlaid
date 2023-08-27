@@ -18,7 +18,7 @@ component accessors="false" {
 	 *
 	 * @response a HyperResponse object for the request.
 	 */
-	public struct function parseAndThrow( required HyperResponse response ){
+	public struct function throwOnError( required HyperResponse response ){
 		if ( response.isError() ){
 			var result  = response.getData();
 			var message = "Error from Plaid server: ";
